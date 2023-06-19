@@ -1,0 +1,59 @@
+/** @format */
+
+import React from "react";
+
+import Phone from "../../assets/img/iphoneMax.png";
+import Google from "../../assets/img/google.png";
+import Appstore from "../../assets/img/appstore.png";
+
+import "../../scss/components/Connection.scss";
+
+function Connection() {
+  return (
+    <div className='connection'>
+      <div className='connection__block'>
+        <div className='connection__phone'>
+          <img
+            className='connection__img'
+            src={Phone}
+            alt=''
+          />
+        </div>
+        <div className='connection__content'>
+          <h2 className='connection__title'>
+            Все мастера в одном приложении
+          </h2>
+          <span className='connection__subtitle'>
+            Установите по ссылке из СМС
+          </span>
+          <div className='connection__feedback'>
+            <input
+              className='connection__feedback-inp'
+              placeholder='+7 123-456-78-90'
+              type='tel'
+              name=''
+              id=''
+            />
+            <button className='connection__feedback-btn'>
+              Получить ссылку
+            </button>
+          </div>
+          <div className='connection__download'>
+            <img
+              className='connection__download-link'
+              src={Google}
+              alt=''
+            />
+            <img
+              className='connection__download-link'
+              src={Appstore}
+              alt=''
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default Connection;

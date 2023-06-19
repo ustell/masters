@@ -1,0 +1,16 @@
+.search__input {
+  font-size: 1.8rem;
+  line-height: 2rem;
+  color: #333;
+  padding: 20px 10px 20px 20px;
+  margin-right: 1rem;
+  width: 55.3rem;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+  background: #F5F5F5;
+  border-radius: 5px;
+  &::placeholder {
+    color: #a8a8a8;
+  }
+}

@@ -1,0 +1,17 @@
+.hint {
+  &__text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    /* identical to box height, or 133% */
+
+    width: 100%;
+    color: #000000;
+    padding: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 0.5rem;
+    margin-right: 1rem;
+  }
+}

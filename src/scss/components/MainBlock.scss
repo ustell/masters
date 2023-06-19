@@ -1,0 +1,67 @@
+.main {
+  display: flex;
+  margin-top: 10rem;
+  justify-content: space-between;
+
+  // left side
+  &content {
+  }
+  &title {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: 2px;
+    margin-bottom: 2rem;
+  }
+  &subtitle {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+  }
+  &search {
+    margin-bottom: 3rem;
+  }
+  &hint {
+    display: flex;
+    flex-wrap: wrap;
+    &-title {
+      background: #f5f5f5;
+      border-radius: 0.5rem;
+      color: #000;
+      padding: 1rem;
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+  }
+  // right side
+
+  &img {
+    // background: rgba(69, 174, 67, 0.6);
+    // filter: blur(200px);
+  }
+
+  &__blur {
+
+    position: absolute;
+    display: block;
+    background: rgba(69, 174, 67, 0.6);
+    filter: blur(200px);
+    width: 363px;
+    height: 363px;
+    border-radius: 50%;
+  }
+}
+.mainphohe{
+  width: 363px;
+    height: 402px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    background-image: url('../../assets/img/Ellipse.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+.mainimg{
+  z-index: 1;
+}

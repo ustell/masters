@@ -1,0 +1,165 @@
+.work {
+  margin-bottom: 8rem;
+
+  &__title {
+    font-size: 36px;
+    line-height: 40px;
+    color: #000000;
+    margin-bottom: 6rem;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+
+    &-item {
+      width: 40rem;
+      height: 40rem;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: inset 0px 4px 10px rgba(0, 0, 0, 0.25);
+      overflow: hidden; /* Добавлено свойство overflow */
+    }
+      &-content {
+        max-width: 320px;
+        width: 320px;
+        height: 240px;
+        background-color: #fff;
+        border-radius: 20px;
+       
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+.items{
+  min-width: 246px; 
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-text{
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 30px;
+      width: 200px;
+    }
+}
+
+.red {
+  background: #ec8c99;
+}
+
+.orange {
+  background: #f2ddcd;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pink {
+  background: #e9def0;
+}
+.profile-block{
+ 
+}
+.profile-img{
+  width: 48.3px;
+  height: 48.3px;
+}
+.star-img{
+  width: 19px;
+  height: 19px;
+  margin-left: 6px;
+  margin-right: 3px;
+}
+.profile{
+  &-list{
+    margin-left: 18px;
+    display: flex;
+  }
+  &-block{
+
+&-text{
+  margin-left: 20px;
+}
+  }
+  &-item{
+    width: 360px;
+    height: 70px;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 8px 0px;
+    display: flex;
+    align-items: center;
+
+  }
+  &-name{
+    display: flex;
+    margin-bottom: 5px;
+  }
+}
+.chat {
+  width: 319.86px;
+height: 239.16px;
+  margin: 8rem 4rem;
+  &__user {
+    padding: 2rem;
+    background: #ffffff;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__contact {
+    display: flex;
+  }
+  &__avatar {
+    margin-right: 2rem;
+    &-img {
+    }
+  }
+  &__name {
+    &-title {
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 20px;
+      color: #000000;
+      margin-bottom: 0.5rem;
+    }
+  }
+  &__evaluation {
+    &-star {
+    }
+    &-img {
+    }
+    &-count {
+      margin: 0 0.5rem;
+    }
+  }
+  span {
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+  }
+  &__message {
+    margin-top: 6rem;
+  }
+  &__text {
+    max-width: 16.6rem;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #a8a8a8;
+    background: #f5f5f5;
+    border-radius: 10px;
+    padding: 1rem;
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+.connection {
+  background: #d9d9d9;
+  border-radius: 2rem;
+  margin-bottom: 8rem;
+  &__block {
+    display: flex;
+  }
+  &__phone {
+    position: relative;
+    top: 36px;
+    right: 8px;
+    margin-right: 18.7rem;
+  }
+  &__img {
+    position: relative;
+    top: 12px;
+    right: -23px;
+  }
+  &__content {
+    align-items: center;
+    padding: 10.9rem 0;
+  }
+  &__title {
+    font-weight: 400;
+    font-size: 56px;
+    line-height: 60px;
+    color: #000000;
+    margin-bottom: 3rem;
+    max-width: 32.6rem;
+  }
+  &__subtitle {
+    font-size: 18px;
+    line-height: 16px;
+    margin-bottom: 3rem;
+  }
+  &__feedback {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    &-inp {
+      padding: 1.7rem 1.2rem;
+      border: none;
+      font-size: 15px;
+      line-height: 16px;
+      outline: none;
+      margin-right: 1rem;
+      border-radius: 5px;
+      width: 250px;
+    }
+    &-btn {
+      padding: 1.7rem 6.3rem;
+      background: #45ae43;
+      border-radius: 5px;
+      border: none;
+    }
+  }
+  &__download {
+    margin: 7.04rem 0 4rem 0;
+    margin-top: 7.04rem;
+    display: flex;
+    &-link {
+      &:not(:last-child) {
+        margin-right: 1.6rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.reviews {
+  margin-bottom: 4.8rem;
+  &__title {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 40px;
+    color: #000000;
+    margin-bottom: 1rem;
+  }
+  &__subtitle {
+    font-size: 17px;
+    line-height: 22px;
+    color: #808080;
+    // margin-bottom: 4rem;
+  }
+  &__block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 33.5rem;
+    margin-top: 40px;
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+  }
+  &__users {
+    display: flex;
+  }
+  &__avatar {
+  }
+  &__img {
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  &__info {
+    margin: 1rem;
+  }
+
+  &__name {
+    font-weight: 400;
+
+    line-height: 17px;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    line-height: 20px;
+    color: #b2b2b2;
+    :not(:last-child) {
+      margin-right: 1rem;
+    }
+    .revoews__state-star {
+      margin-right: 0.3rem;
+    }
+  }
+  &__content {
+    color: #b2b2b2;
+
+    &-title {
+      font-weight: 400;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+    }
+    &-stars {
+      margin-bottom: 1rem;
+    }
+    &-subtitle {
+      margin-bottom: 1rem;
+    }
+    &-translate {
+      text-decoration-line: underline;
+      cursor: pointer;
+      margin-bottom: 1rem;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.region {
+  &__title {
+    font-size: 36px;
+    line-height: 40px;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  &__subtitle {
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #a5a5a5;
+    margin-bottom: 45px;
+  }
+}
