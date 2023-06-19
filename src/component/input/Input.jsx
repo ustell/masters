@@ -1,14 +1,16 @@
-import React from 'react';
-import '../../scss/components/Input.scss';
+/** @format */
 
-function Input({placeholder,type}) {
+import React from "react";
+import "../../scss/components/Input.scss";
+
+function Input({ value, onChange }) {
   return (
     <input
-      className="search__input"
-      type={type}
-      name=""
-      id=""
-      placeholder={placeholder}
+      className='search__input'
+      type='text'
+      value={value}
+      onChange={onChange}
+      placeholder='Услуга или специалист'
     />
   );
 }

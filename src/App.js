@@ -10,6 +10,9 @@ import "./scss/app.scss";
 
 import { Path } from "./path";
 import PhoneRegistration from "./pages/login/index.jsx";
+import ActiveOrders from "./pages/orders_Active/Index";
+import Header from "./component/Header/Header";
+import { Footer } from "./component/Footer/Footer";
 
 function App() {
   const router = createBrowserRouter([
@@ -25,10 +28,19 @@ function App() {
       path: Path.home,
       element: <Main />,
     },
+    {
+      path: Path.activeOrders,
+      element: <ActiveOrders />,
+    },
   ]);
   return (
     <div className='App'>
-      <RouterProvider router={router} />
+      <Header />
+      <div className='container'>
+        {" "}
+        <RouterProvider router={router} />
+      </div>
+      <Footer />
     </div>
   );
 }

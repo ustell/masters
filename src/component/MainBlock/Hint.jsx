@@ -1,13 +1,18 @@
-import React from 'react';
+/** @format */
 
-import '../../scss/components/hint.scss';
+import React from "react";
 
-function Hint({ text }) {
+import "../../scss/components/hint.scss";
+
+export const Hint = ({ content, onClick }) => {
   return (
-    <div className="hint">
-      <span className="hint__text">{text}</span>
+    <div className='orderFilling__hint-content'>
+      <p
+        className='orderFilling__hint-text'
+        onClick={onClick}
+      >
+        {content}
+      </p>
     </div>
   );
-}
-
-export default Hint;
+};
