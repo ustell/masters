@@ -1,0 +1,54 @@
+.activeOrders {
+    margin-bottom: 87px;
+    &__title {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 30px;
+      color: #000000;
+      margin-top: 8rem;
+      margin-bottom: 4rem;
+    }
+    &__block {
+      padding: 2rem;
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+    }
+    &__item {
+      &-group {
+        &:not(:last-child) {
+          margin-bottom: 2rem;
+        }
+      }
+      &-title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+        color: #000000;
+      }
+      &-order {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        color: #bfbfbf;
+      }
+    }
+    &__btn {
+      outline: none;
+      border: none;
+      border-radius: 10px;
+    }
+    &__link {
+      display: flex;
+      align-items: center;
+      padding: 0.95rem;
+      &-icon {
+        margin-right: 1rem;
+      }
+      &-text {
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 20px;
+        color: #333333;
+      }
+    }
+  }
