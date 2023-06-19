@@ -2,15 +2,14 @@
 
 import React from "react";
 
-import Phone from "../../assets/img/iphoneMax.png";
+import Phone from "../../assets/img/Masters.svg";
 import Google from "../../assets/img/google.png";
 import Appstore from "../../assets/img/appstore.png";
 
-import "../../scss/components/Connection.scss";
 
 function Connection() {
   return (
-    <div className='connection'>
+    <section className='connection'>
       <div className='connection__block'>
         <div className='connection__phone'>
           <img
@@ -52,7 +51,7 @@ function Connection() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

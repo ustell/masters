@@ -1,7 +1,7 @@
 /** @format */
 
 import React from "react";
-import "../../scss/components/Popular.scss";
+
 
 const Block = ({ text, img, alt }) => {
   return (

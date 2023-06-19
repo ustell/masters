@@ -1,20 +1,19 @@
 .connection {
-  background: #d9d9d9;
-  border-radius: 2rem;
+  padding: 0 16rem 0 16rem;
+  background: $background;
   margin-bottom: 8rem;
   &__block {
     display: flex;
   }
   &__phone {
     position: relative;
-    top: 36px;
-    right: 8px;
-    margin-right: 18.7rem;
+    left: 0;
+    right: 0;
+    left: 0;
+
   }
   &__img {
     position: relative;
-    top: 12px;
-    right: -23px;
   }
   &__content {
     align-items: center;

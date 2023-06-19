@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 
-import "../../scss/components/MainBlock.scss";
 
-import phone from "../../assets/img/iphone.png";
+import phone from "../../assets/img/image mobile.svg";
 
 import { Hint } from "./Hint.jsx";
 import Input from "../input/Input";
@@ -17,14 +16,17 @@ function MainBlock() {
     setInputValue(content);
   };
   return (
-    <div className='main'>
-      <div className='maincontent'>
+    <main className='main'>
+      <div className='main__content'>
+
         <h1 className='maintitle'>
           Дела исполняются с МАСТЕРАМИ
         </h1>
+        <div className="main__subtitle">
         <span className='mainsubtitle'>
           12 856 клиентов доверили дела мастерам
         </span>
+        </div>
         <div className='mainsearch'>
           <Input
             value={inputValue}
@@ -51,11 +53,11 @@ function MainBlock() {
           />
         </div>
       </div>
-      <div className='mainphohe'>
-        <img className='mainimg' src={phone} alt='' />
+      <div className='main__phohe'>
+        <img className='main__img' src={phone} alt='iphone' />
         <div className='main__blur'></div>
       </div>
-    </div>
+    </main>
   );
 }
 
