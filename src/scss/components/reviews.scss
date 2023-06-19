@@ -4,7 +4,7 @@
     font-weight: 500;
     font-size: 36px;
     line-height: 40px;
-    color: #000000;
+    color: $black;
     margin-bottom: 1rem;
   }
   &__subtitle {
@@ -39,10 +39,10 @@
   }
 
   &__name {
-    font-weight: 400;
+    font-weight: 500;
 
     line-height: 17px;
-    color: #000;
+    color: $black;
     margin-bottom: 1rem;
   }
 
@@ -51,7 +51,7 @@
     align-items: center;
     font-size: 15px;
     line-height: 20px;
-    color: #b2b2b2;
+    color: $gray-link;
     :not(:last-child) {
       margin-right: 1rem;
     }
@@ -60,16 +60,21 @@
     }
   }
   &__content {
-    color: #b2b2b2;
+    color: $gray-link;
 
     &-title {
-      font-weight: 400;
+      font-weight: 500;
       color: #000000;
       display: flex;
       flex-direction: column;
     }
     &-stars {
       margin-bottom: 1rem;
+
+      img {
+        padding-right: .3rem;
+      }
+
     }
     &-subtitle {
       margin-bottom: 1rem;
@@ -78,6 +83,9 @@
       text-decoration-line: underline;
       cursor: pointer;
       margin-bottom: 1rem;
+    }
+    a {
+      color: $gray-link;
     }
   }
 }

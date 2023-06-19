@@ -6,13 +6,15 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import "./scss/app.scss";
 
 import { Path } from "./path";
 import PhoneRegistration from "./pages/login/index.jsx";
 import ActiveOrders from "./pages/orders_Active/Index";
 import Header from "./component/Header/Header";
 import { Footer } from "./component/Footer/Footer";
+
+import "./scss/app.scss";
+
 
 function App() {
   const router = createBrowserRouter([

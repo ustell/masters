@@ -2,9 +2,16 @@
 
 import React from "react";
 
+import Star from '../../assets/img/Star.svg';
+import BgStar from '../../assets/img/bgstars.svg';
+import Masters from '../../assets/img/masters.png';
+
 export const Profile = () => {
   return (
-    <div className='reviews__item'>
+    <>
+  {/* reviews */}
+
+     <div className='reviews__item'>
       <div className='reviews__users'>
         <div className='reviews__avatar'>
           <img
@@ -34,19 +41,17 @@ export const Profile = () => {
           Юлия оставила отзыв
           <div className='reviews__content-stars'>
             <img src={BgStar} alt='star' />
-            <img src={BgStar} alt='star' />
-            <img src={BgStar} alt='star' />
-            <img src={BgStar} alt='star' />
-            <img src={BgStar} alt='star' />
           </div>
         </div>
-        <div className='reviews__content-subtitle'>
+        <p className='reviews__content-subtitle'>
           Всё отлично! Спасибо!
-        </div>
-        <div className='reviews__content-translate'>
+        </p>
+        <a href="/" className='reviews__content-translate'>
           Перевод
-        </div>
+        </a>
       </div>
     </div>
+    
+    </>
   );
 };
