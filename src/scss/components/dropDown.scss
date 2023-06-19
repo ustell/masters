@@ -1,37 +1,138 @@
-.dropdown-menu{
-    position: relative;
-    cursor: pointer;
-    font-size: 14px;
-    &-list{
-        position: absolute;
-        top: 37px;
-        padding: 20px;
-        min-width: 267px;
-        min-height: 300px;
-        background-color: #F5F5F5;
-    }
-    &-input{
-        background: #DFDFDF;
-        border: none;
-        border-radius: 20px;
-        padding: 12px 15px;
-        min-width: 215px;
-    }
-    &-item{
+.dropdown-menu {
+  cursor: pointer;
+  font-size: 14px;
+  &-list {
+    position: absolute;
+    top: 3.7rem;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    min-width: 267px;
+    // min-height: 300px;
+    height: 300px;
+    border-radius: 0 0 1.5rem 1.5rem;
+    box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.08);
+    box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.1);
 
-    }
+    background-color: $white-components;
+
+    z-index: 2;
+  }
+  &-input {
+    background: $gray-input;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 15px;
+    min-width: 215px;
+  }
+
 }
-.line{
+.line {
+  width: 215px;
+  border: 1px solid #c4c4c4;
+  border-radius: 100%;
 
-    width: 215px;
-    border: 1px solid #C4C4C4;
 }
 .rotating-svg {
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer;
-    margin-left: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: transform .0s ease-in;
+}
+
+.rotate {
+  transform: rotate(180deg);
+}
+
+// alex code
+
+.dropdown__menu-block {
+  display: block;
+  margin-top: 2rem;
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  transition: .3s ease-in;
+
+  li {
+    padding-bottom: 2rem;
+
+    width: 100%;
+
+    font-size: 1.5rem;
+    font-weight: 400;
+
+    color: $black;
+
+    transition: color .0s ease-in;
+
+    &:hover {
+        color: $green;
+    }
+
+    &:last-child {
+        padding-bottom: 0;
+    }
+
   }
-  
-  .rotate {
-    transform: rotate(180deg);
+}
+
+.dropdown-menu-toggle {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-menu-input {
+  margin-right: 2rem;
+  position: sticky;
+  font-size: 1.5rem;
+  font-family: "Roboto";
+
+  color: #797979;
+
+  background-color: $gray-input;
+
+  &:focus {
+    outline: none;
+    border: 1px solid $gray-link;
   }
+}
+
+.dropdown-menu-input::placehoder {
+  font-size: 1.5rem;
+  font-family: "Roboto";
+
+  color: #797979;
+}
+
+.dropdown__line {
+    margin-right: 2rem;
+
+}
+
+.line {
+  width: 100%;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.dropdown__scroll {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  overflow-y: auto;
+}
+
+.dropdown__scroll::-webkit-scrollbar {
+  width: 0.6rem;
+  background-color: #f9f9fd;
+}
+.dropdown__scroll::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: $green;
+}
+.dropdown__scroll::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}

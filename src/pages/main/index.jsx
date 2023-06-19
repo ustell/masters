@@ -1,7 +1,6 @@
 /** @format */
 
 import Connection from "../../component/Connection/Connection";
-import { Footer } from "../../component/Footer/Footer";
 import HowWork from "../../component/HowItsWork/HowItsWork";
 import MainBLock from "../../component/MainBlock/MainBlock.jsx";
 import Popular from "../../component/Popular/Popular.jsx";
@@ -19,7 +18,6 @@ function Main() {
         <HowWork />
         <Reviews />
       </div>
-      <Footer />
     </div>
   );
 }

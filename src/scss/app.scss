@@ -1,4 +1,11 @@
 @import '../scss/libs/reset';
+@import "./variables.scss";
+
+*,
+*::after
+*::before {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -8,6 +15,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: #fff;
+
+  font-size: 1.5rem;
 
   color: #333333;
 }
@@ -32,3 +41,15 @@ code {
   padding: 0 1.5rem;
   margin: 0 auto;
 }
+
+p {
+  font-size: 1.5rem
+}
+
+// blocks
+
+@import "./components/header.scss";
+@import "./components/reviews.scss";
+@import "./components/dropDown.scss";
+@import "./components/hint.scss";
+@import "./components/dropdownMenuSpecialist";

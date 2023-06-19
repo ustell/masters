@@ -2,7 +2,6 @@
 
 import React from "react";
 
-import "../../scss/components/hint.scss";
 
 export const Hint = ({ content, onClick }) => {
   return (
