@@ -11,6 +11,7 @@ import { Path } from "./path";
 import PhoneRegistration from "./pages/login/index.jsx";
 import ActiveOrders from "./pages/orders_Active/Index";
 import Header from "./component/Header/Header";
+import { AsideNav } from "./component/ui/AsideNav";
 import { Footer } from "./component/Footer/Footer";
 
 import "./scss/app.scss";
@@ -34,10 +35,14 @@ function App() {
       path: Path.activeOrders,
       element: <ActiveOrders />,
     },
+    {
+      path: Path.aside,
+      element: <AsideNav />,
+    },
   ]);
   return (
     <div className='App'>
-      <Header />  
+      <Header />
         <RouterProvider router={router} />
       <Footer />
     </div>
