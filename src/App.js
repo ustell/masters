@@ -37,11 +37,8 @@ function App() {
   ]);
   return (
     <div className='App'>
-      <Header />
-      <div className='container'>
-        {" "}
+      <Header />  
         <RouterProvider router={router} />
-      </div>
       <Footer />
     </div>
   );

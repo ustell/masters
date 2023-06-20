@@ -9,16 +9,14 @@ import Reviews from "../../component/Reviews/Reviews";
 
 function Main() {
   return (
-    <div className='Main'>
-      <div className='container'>
+    <>
         <MainBLock />
         <Popular />
         <Region />
         <Connection />
         <HowWork />
         <Reviews />
-      </div>
-    </div>
+    </>
   );
 }
 

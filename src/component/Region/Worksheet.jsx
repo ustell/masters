@@ -2,14 +2,14 @@
 
 import React from "react";
 
-import "../../scss/components/worksheet.scss";
 
 function WorkSheet({ title, text }) {
   return (
     <div className='workSheet'>
+      {/* block */}
       <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -45,9 +45,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -83,9 +84,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -121,9 +123,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -159,9 +162,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -197,9 +201,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -235,9 +240,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -273,9 +279,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -311,9 +318,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -349,9 +357,10 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
-      <ul className='workSheet__block'>
+        {/* block */}
+        <ul className='workSheet__block'>
         <li className='workSheet__item workSheet__title'>
-          <a href='/' className='workSheet__link'>
+          <a href='/' className='workSheet__link workSheet__link-black'>
             Репетиторы
           </a>
           <span className='workSheet__count'>3564</span>
@@ -387,6 +396,7 @@ function WorkSheet({ title, text }) {
           </a>
         </li>
       </ul>
+      
     </div>
   );
 }
