@@ -8,6 +8,7 @@
 }
 
 body {
+  max-width: 1624px;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
     'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -59,4 +60,10 @@ p {
 @import "./components/worksheet.scss";
 @import "./components/Connection.scss";
 @import "./components/howItsWork.scss";
+
+// pages
+@import "./components/aside.scss";
+
+
+
 @import "./components/footer.scss";

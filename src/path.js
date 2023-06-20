@@ -5,4 +5,5 @@ export const Path = {
   login: "/login",
   register: "/register",
   activeOrders: "/orders/active",
+  aside: "/aside",
 };
