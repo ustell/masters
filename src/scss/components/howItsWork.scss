@@ -1,4 +1,5 @@
 .work {
+  padding: 0 16rem 0 16rem;
   margin-bottom: 8rem;
 
   &__title {
@@ -13,8 +14,9 @@
     justify-content: space-between;
 
     &-item {
-      width: 40rem;
-      height: 40rem;
+      width: 100%;
+      max-width: 40rem;
+      max-height: 40rem;
       border-radius: 20px;
       display: flex;
       align-items: center;
@@ -28,7 +30,7 @@
         height: 240px;
         background-color: #fff;
         border-radius: 20px;
-       
+
         display: flex;
         justify-content: center;
         align-items: center;
@@ -36,7 +38,7 @@
     }
   }
 .items{
-  min-width: 246px; 
+  min-width: 246px;
     height: 195px;
     display: flex;
     flex-direction: column;
@@ -58,14 +60,13 @@
   background: #f2ddcd;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
 }
 
 .pink {
   background: #e9def0;
 }
 .profile-block{
- 
+
 }
 .profile-img{
   width: 48.3px;
@@ -96,6 +97,7 @@
     padding: 8px 0px;
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
 
   }
   &-name{
@@ -162,4 +164,8 @@ height: 239.16px;
       margin-bottom: 1rem;
     }
   }
+}
+
+.footer__logo {
+  margin-bottom: 2rem;
 }

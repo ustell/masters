@@ -19,9 +19,15 @@ function Connection() {
           />
         </div>
         <div className='connection__content'>
+          <div className="connection__title__end">
           <h2 className='connection__title'>
-            Все мастера в одном приложении
+            Все <span>мастера</span> в
           </h2>
+          <h2 className='connection__title'>
+              одном приложении
+          </h2>
+          </div>
+
           <span className='connection__subtitle'>
             Установите по ссылке из СМС
           </span>

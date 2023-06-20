@@ -2,7 +2,6 @@
 
 import React, { useState, useEffect } from "react";
 
-import "../../scss/components/howItsWork.scss";
 import Meeting from "./Meeting";
 import { CheckBox } from "../ui/CheckBox";
 import { Profile } from "./Profile";
