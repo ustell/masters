@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { Path } from "../../path";
 
 function Header() {
-  const [useUser, setuseUser] = React.useState(false);
+  const [useUser, setuseUser] = React.useState(true);
   // переменную из бэка
   const [useFio, setUseFio] = React.useState('Александр Курчаков');
 

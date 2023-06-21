@@ -2,7 +2,7 @@
 @import "./variables.scss";
 
 *,
-*::after
+*::after,
 *::before {
   box-sizing: border-box;
 }
@@ -61,6 +61,10 @@ p {
 @import "./components/howItsWork.scss";
 @import "./components/asideNavProfile.scss";
 @import "./components/profile.scss";
+
+// forms
+@import "./components/profileForms.scss";
+
 
 // pages
 @import "./components/aside.scss";

@@ -9,7 +9,7 @@ import { Chat } from "./Chat";
 
 function HowWork() {
   return (
-    <div className='work'>
+    <section className='work'>
       <h3 className='work__title'>Как это работает</h3>
 
       <div className='work__block'>
@@ -19,7 +19,7 @@ function HowWork() {
           <Chat />
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 

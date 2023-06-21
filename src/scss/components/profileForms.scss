@@ -1,0 +1,16 @@
+.profile__block-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__inp {
+  padding: 3.2rem 2rem;
+  width: 100%;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  font-family: 'Roboto';
+
+  color: $black;
+}

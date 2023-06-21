@@ -1,5 +1,5 @@
 .header {
-  width: calc(100% - 32rem);
+  width: 100%;
   padding: 0 16rem 0 16rem;
 
   height: 6rem;
@@ -49,8 +49,6 @@
 .header__menu ul{
   display: flex;
   position: relative;
-
-  line-height: 1;
 }
 
 .header__menu ul li {
