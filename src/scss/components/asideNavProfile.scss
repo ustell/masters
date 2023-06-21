@@ -1,0 +1,21 @@
+.aside__container.aside__conteiner-profile li {
+  justify-content: flex-start;
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  & img {
+    padding-right: 1rem;
+
+    object-fit: contain;
+  }
+}
+
+.aside__title {
+  margin-bottom: 2rem;
+  font-size: 3.2rem;
+  font-weight: 500;
+
+  line-height: 3rem;
+
+  color: $black;
+}

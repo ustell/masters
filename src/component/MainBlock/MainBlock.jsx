@@ -36,19 +36,19 @@ function MainBlock() {
         </div>
         <div className='mainhint'>
           <Hint
-            content='Математика дистанционно'
+            content='Программист'
             onClick={() =>
-              handleBlockClick("Математика дистанционно")
+              handleBlockClick("Программист")
             }
           />
           <Hint
-            content='Копирайтер '
-            onClick={() => handleBlockClick("Копирайтер ")}
+            content='Копирайтер'
+            onClick={() => handleBlockClick("Копирайтер")}
           />
           <Hint
-            content='Английский язык по скайпу'
+            content='Английский язык'
             onClick={() =>
-              handleBlockClick("Английский язык по скайпу")
+              handleBlockClick("Английский язык")
             }
           />
         </div>

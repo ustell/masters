@@ -24,7 +24,14 @@
   justify-content: space-between;
 }
 
+.header__menu-rigth {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+}
+
 .header__menu-rigth li {
+
 
   &:last-child {
     margin-right: 0rem;
@@ -64,6 +71,40 @@
   }
 }
 
+// header for user registration
+
+.header__menu-user {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu-user span{
+  margin-left: 3rem;
+  margin-right: 1rem;
+  width: 4rem;
+  height: 4rem;
+
+  display: flex;
+  justify-content: center;
+
+  font-size: 1.8rem;
+  font-weight: 400;
+
+  text-align: center;
+  align-items: center;
+
+  color: $white;
+
+  border-radius: 50%;
+
+  background-color: $profile;
+}
+
+.header__menu-user a {
+  display: flex;
+  align-items: center;
+}
 
 
 
