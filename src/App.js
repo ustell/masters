@@ -46,11 +46,13 @@ function App() {
     },
   ]);
   return (
+
     <div className='App'>
       <Header />
         <RouterProvider router={router} />
       <Footer />
     </div>
+
   );
 }
 
