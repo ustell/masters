@@ -1,0 +1,225 @@
+.profile__block-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__inp {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  width: 100%;
+
+  display: flex;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  font-family: "Roboto";
+
+  color: $black;
+
+  border-radius: 1rem;
+  border: none;
+
+  background-color: $white-components;
+
+  &::placeholder {
+    color: $black;
+  }
+
+}
+
+.profile__inp:focus {
+  outline: none;
+}
+
+
+.profile__form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__form label {
+  margin-bottom: 1rem;
+  display: block;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  font-family: "Roboto";
+
+  color: $gray  ;
+}
+
+.profile__gender {
+  appearance: none;
+  padding: 2rem;
+  width: 100%;
+  max-width: 20rem;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  color: $black;
+
+  background-color: $white-components;
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+
+
+}
+
+.profile__gender select {
+  display: block;
+  padding: 1rem;
+  border: none;
+  outline: none;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  font-family: 'Roboto';
+
+  border-radius: 1rem;
+
+  background-color: $white-components;
+
+  &:focus {
+    border: none;
+    outline: none;
+  }
+
+}
+
+.profile__gender option{
+
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  font-family: 'Roboto';
+
+  background: $white-components;
+  border: none;
+  outline: none;
+
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+.profile__galochka {
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.selectedrotate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 44%;
+  right: 2rem;
+
+}
+
+// phone
+.profile__inp-phone {
+  padding-left: 5rem;
+  margin-bottom: 1rem;
+  background: url(../../assets/img/turkeyLItle.png) no-repeat center left 2rem;
+
+  color: $black;
+
+  background-color:  $white-components;
+
+  &::placeholder {
+    color: $black;
+  }
+}
+
+.profile__inp-email {
+  margin-bottom: 1rem;
+
+  &::placeholder {
+    color: $gray;
+  }
+}
+
+.profile__block p{
+  font-size: 1.5rem;
+  font-weight: 400;
+
+  color: $gray;
+}
+
+// btn
+.profile__btn {
+  padding: 1rem;
+  width: 100%;
+  height: 4rem;
+  max-width: 20rem;
+  margin-top: 2rem;
+  cursor: pointer;
+
+  display: flex;
+  gap: 1rem;
+
+  justify-content: center;
+  align-items: center;
+
+
+
+  line-height: 1;
+
+  font-size: 1.5rem;
+  font-weight: 500;
+
+  font-family: 'Roboto';
+
+  color: $black;
+
+  border: none;
+  border-radius: 1rem;
+  background-color: #EBEBEB;
+
+
+  &:hover {
+    background-color: $gray-input;
+  }
+
+}
+
+// email
+
+.profile__btn-email {
+  color: $white;
+  background-color: $green;
+
+  &:hover {
+    background-color: $green_hover;
+  }
+}
+
+// delete
+
+.profile__btn-delete {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: $white;
+  background-color: #FC5B5B;
+
+  &:hover {
+    background-color: #fd4141;
+
+  }
+}
+
+// exit
+
+.profile__btn-exit p{
+  color: $black;
+
+}

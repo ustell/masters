@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import Phone from "../../assets/img/Masters.svg";
+import Phone from "../../assets/img/Masters (2).png";
 import Google from "../../assets/img/google.png";
 import Appstore from "../../assets/img/appstore.png";
 

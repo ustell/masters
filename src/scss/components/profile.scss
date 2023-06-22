@@ -12,7 +12,8 @@
 }
 
 .profile__block {
-  padding: 2rem;
+  margin-bottom: 2rem;
+  padding: 4rem 2rem;
 
   display: flex;
 
@@ -35,7 +36,13 @@
   flex-direction: column;
 }
 
+.profile__block-main {
+  margin-bottom: 4rem;
+
+}
+
 .account__block {
+
   display: flex;
 
   align-items: center;
