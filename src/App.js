@@ -15,6 +15,8 @@ import { FilterPages } from "./pages/FilterPages/FilterPages";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { Footer } from "./component/Footer/Footer";
 
+
+
 import "./scss/app.scss";
 
 
@@ -43,6 +45,10 @@ function App() {
     {
       path: Path.profile,
       element: <ProfilePage/>,
+    },
+    {
+      path: Path.filter,
+      element: <FilterPages/>,
     },
   ]);
   return (
