@@ -46,6 +46,12 @@ p {
   font-size: 1.5rem
 }
 
+textarea , input, span{
+  font-family: 'Roboto';
+}
+
+
+
 // blocks
 
 @import "./components/header.scss";
@@ -61,6 +67,7 @@ p {
 @import "./components/howItsWork.scss";
 @import "./components/asideNavProfile.scss";
 @import "./components/profile.scss";
+@import "./components/filter.scss";
 
 // forms
 @import "./components/profileForms.scss";

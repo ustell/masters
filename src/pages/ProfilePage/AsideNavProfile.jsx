@@ -14,7 +14,7 @@ export const AsideNavProfile = (scrollToSection) => {
       id: 1,
       img: myprofile,
       section: "section1",
-      text :"Мой профиль",
+      text: "Мой профиль",
     },
     {
       id: 2,
@@ -48,14 +48,13 @@ export const AsideNavProfile = (scrollToSection) => {
     },
   ];
 
-
-  const [isActiveProfile, setIsActiveProfile] = React.useState(AsideProfile[0].id);
+  const [isActiveProfile, setIsActiveProfile] = React.useState(
+    AsideProfile[0].id
+  );
 
   const ScrollClickProfile = (itemId) => {
     setIsActiveProfile(itemId);
   };
-
-
 
   return (
     <aside className="aside">
@@ -68,7 +67,7 @@ export const AsideNavProfile = (scrollToSection) => {
               smooth={true}
               duration={600}
               offset={-window.innerHeight / 2}
-              className={isActiveProfile === item.id ? 'active' : ''}
+              className={isActiveProfile === item.id ? "active" : ""}
               onClick={() => ScrollClickProfile(item.id)}
               key={item.id}
             >

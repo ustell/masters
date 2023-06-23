@@ -8,7 +8,7 @@ export const AsideNav = () => {
         <li className="active">
           Заказ<span>Нет просмотров</span>
         </li>
-        <li>Часто задаваемы вопросы</li>
+        <li>Часто задаваемые вопросы</li>
         <li>Специалисты</li>
       </ul>
     </nav>

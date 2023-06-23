@@ -7,4 +7,5 @@ export const Path = {
   activeOrders: "/orders/active",
   aside: "/aside",
   profile: "/profile",
+  filter: "/filter",
 };
