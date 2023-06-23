@@ -3,7 +3,7 @@
 export const Path = {
   home: "/",
   login: "/login",
-  register: "/register",
+  register: "/client/register",
   activeOrders: "/orders/active",
   aside: "/aside",
   profile: "/profile",
