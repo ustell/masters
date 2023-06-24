@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import DropdownMenu from "./DropDown";
 import { DropDownProfile } from "./DropDownProfile";
 import { DropdownSpecialist } from "./DropdownSpecialist";
@@ -8,50 +8,72 @@ import { DropdownSpecialistProfile } from "./DropdownSpecialistProfile";
 import Logo from "../../assets/img/МАСТЕРА.svg";
 import { Link } from "react-router-dom";
 import { Path } from "../../path";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchUserName } from "../../redux/features/authSlice";
 
 function Header() {
-  const [useUser, setuseUser] = React.useState(false);
-  // переменную из бэка
-  const [useFio, setUseFio] = React.useState('Александр Курчаков');
+  const dispatch = useDispatch();
 
-  const firstWord = () => {
-    setUseFio(useFio);
-    // использовать при клике выход
-  }
+  const [useUser, setUseUser] = React.useState(true);
+  const [useFio, setUseFio] = React.useState(
+    "Александр Курчаков",
+  );
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      dispatch(fetchUserName({ token }));
+      setUseUser(false);
+    }
+  }, [dispatch]);
+  const userName = useSelector(
+    (state) => state.auth.userName?.data?.name,
+  );
+  console.log(userName);
+
+  useEffect(() => {
+    setUseFio(userName);
+  }, [userName]);
 
   return (
-    <header className="header">
-      <nav className="header__menu">
-        <ul className="header__menu-left">
+    <header className='header'>
+      <nav className='header__menu'>
+        <ul className='header__menu-left'>
           <li>
-            <a href="/">
-              <img src={Logo} alt="logo" />
-            </a>
+            <Link to={Path.home}>
+              <img src={Logo} alt='logo' />
+            </Link>
           </li>
           <li>
             <DropdownMenu text={"Анталия"} />
           </li>
         </ul>
         {useUser ? (
-          <ul className="header__menu-rigth">
+          <ul className='header__menu-rigth'>
             <li>
               <DropdownSpecialist text={"Специалисты"} />
             </li>
             <li>
-              <a href="/">Войти</a>
+              <Link to={Path.register}>Войти</Link>
             </li>
           </ul>
         ) : (
-          <ul className="header__menu-rigth">
+          <ul className='header__menu-rigth'>
             <li>
-              <DropdownSpecialistProfile text={"Специалисты"} />
+              <DropdownSpecialistProfile
+                text={"Специалисты"}
+              />
             </li>
             <li>
-              <a href="/">Мои заказы</a>
+              <Link to={Path.myOrder}>Мои заказы</Link>
             </li>
-            <li className="header__menu-user">
-              <a href="/"> </a>
-              <DropDownProfile Fio={useFio} profileWord={useFio} />
+            <li className='header__menu-user'>
+              <a href='/'> </a>
+              <DropDownProfile
+                Fio={useFio}
+                profileWord={useFio}
+              />
             </li>
           </ul>
         )}

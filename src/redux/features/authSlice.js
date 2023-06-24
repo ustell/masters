@@ -6,21 +6,19 @@ import {
   createSlice,
   createAsyncThunk,
 } from "@reduxjs/toolkit";
-import axios from "axios";
+import axios from "../services/axios";
 
 export const fetchUserName = createAsyncThunk(
   "auth/fetchUserName",
-  async (_, { getState }) => {
-    const { userToken } = getState().auth;
-    if (userToken) {
+  async ({ token }) => {
+    if (token) {
       try {
-        const response = await axios.get("/api/user/name", {
+        const response = await axios.get("/client/user", {
           headers: {
-            Authorization: `Bearer ${userToken}`,
+            Authorization: `Bearer ${token}`,
           },
         });
-        const userName = response.data.name;
-        return userName;
+        return response;
       } catch (error) {
         console.error("Failed to fetch user name:", error);
         throw error;

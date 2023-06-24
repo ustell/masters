@@ -1,0 +1,55 @@
+.orderCreateProfile {
+    color: #000000;
+    padding: 4rem 16rem 4rem 16rem;
+    color: #000000;
+    max-width: 944px;
+  
+    &__title {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 30px;
+    }
+    &__form {
+      position: relative;
+      margin-top: 2rem;
+    }
+    &__flag {
+      position: absolute;
+      top: 2.3rem;
+      left: 2.3rem;
+      width: 2.1rem;
+      height: 1.4rem;
+    }
+    &__input {
+      padding: 2.3rem 2.3rem 2.3rem 5.1rem;
+      width: 100%;
+    }
+    &__subtitle {
+      margin-top: 1rem;
+      margin-bottom: 5rem;
+    }
+  }
+  .orderCreate__step {
+    display: flex;
+    // width: 100%;
+    margin-top: 3rem;
+    &-prev {
+      background: #f7f7f7;
+      border-radius: 0.5rem;
+      margin-right: 3rem;
+    }
+    &-next {
+      background: #333333;
+      border-radius: 0.5rem;
+      display: flex;
+      color: #fff;
+      width: 100%;
+      justify-content: center;
+    }
+    &-title {
+      margin-right: 1rem;
+    }
+    .orderCreate__btn {
+      padding: 2.2rem 2rem;
+    }
+  }

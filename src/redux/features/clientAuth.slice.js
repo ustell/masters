@@ -41,6 +41,14 @@ export const fetchVerify = createAsyncThunk(
     return data;
   },
 );
+export const fetchUpdate = createAsyncThunk(
+  "auth/update",
+  async (params) => {
+    console.log(params);
+    const data = await axios.put("/client/update", params);
+    return data;
+  },
+);
 
 const authSlice = createSlice({
   name: "auth",
@@ -66,7 +74,22 @@ const authSlice = createSlice({
       state.status = "error";
       state.data = null;
     },
-    // info me
+    // update
+
+    [fetchUpdate.pending]: (state) => {
+      state.status = "loading";
+      state.data = null;
+    },
+    // загрузилось
+    [fetchUpdate.fulfilled]: (state, action) => {
+      state.status = "loaded";
+      state.data = action.payload;
+    },
+    // fetchVerify загрузки
+    [fetchUpdate.rejected]: (state) => {
+      state.status = "error";
+      state.data = null;
+    },
 
     [fetchLogin.pending]: (state) => {
       state.status = "loading";
@@ -98,12 +121,12 @@ const authSlice = createSlice({
       state.data = null;
     },
   },
+  serializableCheck: false,
 });
 
 export const isAuthSelector = () =>
   Boolean(localStorage.getItem("token"));
 
-  
 export const authClientReducer = authSlice.reducer;
 
 export const { logout } = authSlice.actions;

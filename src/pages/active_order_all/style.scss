@@ -1,0 +1,155 @@
+.createOrder {
+    padding: 8rem 16rem 0 16rem;
+    margin-top: 8rem;
+    &__title {
+      font-size: 36px;
+      line-height: 35px;
+      color: #000000;
+    }
+    &__block {
+      margin-top: 4rem;
+    }
+  
+    &__create {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      padding: 2rem;
+      cursor: pointer;
+      flex-direction: column;
+      &-title {
+        font-size: 24px;
+        line-height: 30px;
+        /* identical to box height, or 125% */
+  
+        color: #000000;
+      }
+      &-plus {
+      }
+    }
+  
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+  
+      background: #ffffff;
+  
+      box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.15);
+      border-radius: 20px;
+  
+      padding: 2rem 2rem 7rem 2rem;
+  
+      &-btn {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      &:last-child {
+        margin-bottom: 4rem;
+      }
+      &-content {
+      }
+      &-name {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 30px;
+        color: #000000;
+        margin-bottom: 1.2rem;
+        display: flex;
+        align-items: center;
+      }
+      &-count {
+        margin-left: 0.5rem;
+        font-size: 15px;
+        line-height: 20px;
+        color: #ffffff;
+        background: #ff6f6f;
+        border-radius: 50%;
+        min-width: 21px;
+        min-height: 21px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      &-subtitle {
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 20px;
+        color: #45ae43;
+        display: flex;
+  
+        &-text {
+          display: flex;
+        }
+      }
+      &-data {
+        font-size: 15px;
+        line-height: 20px;
+        color: #a8a8a8;
+      }
+      &-visiting {
+        margin-left: 1rem;
+        display: flex;
+        align-items: center;
+        &--eyes {
+          object-fit: none;
+          margin-right: 0.6rem;
+        }
+        &--count {
+          font-weight: 400;
+          font-size: 15px;
+          line-height: 20px;
+          color: #a8a8a8;
+        }
+      }
+    }
+    &-menu-list {
+      width: 100%;
+      &--inp {
+        width: 997px;
+      }
+    }
+  
+    &__create {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem;
+      cursor: pointer;
+      &-title {
+        font-size: 24px;
+        line-height: 30px;
+        /* identical to box height, or 125% */
+  
+        color: #000000;
+      }
+      &-plus {
+        cursor: pointer;
+        object-fit: contain;
+      }
+    }
+  
+    .cancel {
+      color: #a8a8a8;
+    }
+    .cancel-visible {
+      display: none;
+    }
+  }
+  
+  .drop-menu {
+    width: 100%;
+  }
+  .createOrder-menu-hint {
+    display: flex;
+    margin-top: 2rem;
+  }
+  
+  .display {
+    display: none;
+  }
+  
