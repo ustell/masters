@@ -6,29 +6,26 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-
 import { Path } from "./path";
-import PhoneRegistration from "./pages/login/index.jsx";
+import Register from "./pages/registration/Index";
 import ActiveOrders from "./pages/orders_Active/Index";
 import Header from "./component/Header/Header";
 import { FilterPages } from "./pages/FilterPages/FilterPages";
 import { ProfilePage } from "./pages/ProfilePage/ProfilePage";
 import { Footer } from "./component/Footer/Footer";
-
-
+import OrderFilling from "./pages/order_Filling";
 
 import "./scss/app.scss";
-
+import OrderCreateProfile from "./pages/order_final";
+import FAQ from "./pages/FAQ";
+import { RegistrationPages2 } from "./pages/registration/RegistrationPages2";
+import ActiveOrdersAll from "./pages/active_order_all";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: Path.login,
-      element: <PhoneRegistration />,
-    },
-    {
       path: Path.register,
-      element: <h2>reg</h2>,
+      element: <Register />,
     },
     {
       path: Path.home,
@@ -44,21 +41,40 @@ function App() {
     },
     {
       path: Path.profile,
-      element: <ProfilePage/>,
+      element: <ProfilePage />,
     },
     {
-      path: Path.filter,
-      element: <FilterPages/>,
+      path: Path.filterStepOne,
+      element: <OrderFilling />,
+    },
+    {
+      path: Path.finalStep,
+      element: <OrderCreateProfile />,
+    },
+    {
+      path: Path.FAQ,
+      element: <FAQ />,
+    },
+    {
+      path: Path.FAQ,
+      element: <FAQ />,
+    },
+    {
+      path: Path.finalRegister,
+      element: <RegistrationPages2 />,
+    },
+    {
+      path: Path.myOrder,
+      element: <ActiveOrdersAll />,
     },
   ]);
   return (
-
     <div className='App'>
-      <Header />
-        <RouterProvider router={router} />
-      <Footer />
+      <RouterProvider router={router}>
+        <Header />
+        <Footer />
+      </RouterProvider>
     </div>
-
   );
 }
 

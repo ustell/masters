@@ -1,0 +1,86 @@
+.orderProfile {
+    padding: 4rem 16rem 4rem 16rem;
+    color: #000000;
+    max-width: 1150px;
+
+    &__button{
+      width: 566px;
+      height: 50px;
+      border-radius: 5px;
+      padding: 10px;
+      background-color: #45AE43;
+      border: none; 
+      color: #fff;
+    }
+    &__title {
+      font-weight: 500;
+      font-size: 36px;
+      line-height: 30px;
+    }
+  
+    &__user {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+  
+      padding: 3rem 2rem;
+      &-content {
+        display: flex;
+        align-items: center;
+        &-ava {
+          background-color: #7759ef;
+          width: 6rem;
+          height: 6rem;
+          border-radius: 50%;
+          text-align: center;
+          color: white;
+          font-size: 32px;
+          line-height: 30px;
+          word-wrap: break-word;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+        &--online {
+          width: 1rem;
+          height: 1rem;
+          background-color: #6fe36d;
+          position: absolute;
+          bottom: 0px;
+          right: 6px;
+          border-radius: 50%;
+        }
+        &--name {
+          margin-left: 2rem;
+        }
+        &--title {
+          color: black;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 20px;
+        }
+        &--subtitle {
+          color: #a8a8a8;
+          font-size: 15px;
+          line-height: 20px;
+        }
+      }
+      &-relog {
+        height: 19px;
+        color: #000;
+        font-size: 15px;
+        font-weight: 300;
+        line-height: 20px;
+        text-decoration: none;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  
+    &__subtitle {
+      margin-top: 1rem;
+      margin-bottom: 5rem;
+    }
+  }

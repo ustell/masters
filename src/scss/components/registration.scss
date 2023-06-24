@@ -1,0 +1,184 @@
+.registration {
+    margin: 12rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    &__content {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 55rem;
+      padding: 4rem 4rem;
+      box-shadow: 0px 4px 8px rgba(69, 69, 69, 0.12);
+      border-radius: 5px;
+    }
+    &__title {
+      font-weight: 500;
+      font-size: 21px;
+      margin-bottom: 4rem;
+  
+      color: #333333;
+    }
+    &__form {
+    }
+    &__group {
+    }
+    &__inp {
+      width: 90%;
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      padding: 2rem;
+      color: #a6a6a6;
+      border: 1px solid #d9d9d9;
+      border-radius: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    &__subtitle {
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 20px;
+      color: #808080;
+    }
+    &__button {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      // max-width: 450px;
+    }
+    &__btn {
+        display: flex;
+    align-items: center;
+    justify-content: center;
+      margin-top: 2rem;
+      width: 100%;
+      outline: none;
+      border: none;
+      border-radius: 5px;
+      height: 5rem;
+      font-size: 18px;
+      color: #fff;
+  
+      &-logotip {
+        width: 24px;
+        height: 24px;
+        margin-right: 1rem;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+    }
+    &__link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      font-size: 1.8rem;
+      &-login {
+        color: white;
+      }
+      &-google {
+        color: #333333;
+      }
+    }
+    &__login {
+      cursor: pointer;
+      background: #45ae43;
+  
+      &:hover {
+        background-color: #378f36;
+      }
+    }
+    &__google {
+      background: #ebebeb;
+    }
+  }
+  .PhoneInputInput {
+    border: none;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .registration__content p {
+    width: 100%;
+    display: flex;
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  
+  
+  
+  .registration__content span {
+    margin-left: 0.5rem;
+  
+    font-weight: 500;
+  }
+  
+  .registration__block {
+    display: flex;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
+  
+  .registration__block--izmenit {
+    cursor: pointer;
+    font-weight: 500 !important;
+    text-decoration: underline;
+  
+    &:hover {
+      text-decoration: inherit;
+    }
+  }
+  
+  .registration__input__sms {
+    margin-top: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 0 2rem;
+    width: 100%;
+    height: 5rem;
+  
+    outline: 0.1rem solid $white-components;
+    border: none;
+    border-radius: 1rem;
+  
+    &:focus {
+      outline: 0.1rem solid $gray;
+    }
+  }
+  
+  .registration__input__sms--name {
+    margin-top: 0;
+  }
+  
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+  }
+  
+  .registration__cap
+  a {
+    font-size: 1.3rem ;
+    font-weight: 400;
+  
+    color: $black;
+  }
+  
+  .registration__cap data {
+    margin-left: 0.5rem;
+    font-weight: 500;
+  }
+  
+  .registration__cap--link  p {
+    margin-left: 0.5rem;
+    font-size: 1.3rem ;
+    text-decoration: underline;
+  }
+  
+  .len {
+    font-size: 1.5rem;
+  }
