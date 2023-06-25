@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import '../../scss/components/SpecialistConection.scss';
 
-import Phone from '../../assets/img/iphone.png';
+import Phone from '../../assets/img/Masters (2).png';
 import Google from '../../assets/img/google.png';
 import Appstore from '../../assets/img/appstore.png';
 
