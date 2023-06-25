@@ -1,7 +1,6 @@
 /** @format */
 
 import React from "react";
-import { motion, useAnimation } from "framer-motion";
 
 import "./style.scss";
 

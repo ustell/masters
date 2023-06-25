@@ -59,6 +59,7 @@
 .orange {
   background: #f2ddcd;
   display: flex;
+  gap: 2rem;
   flex-direction: column;
 }
 
@@ -99,6 +100,10 @@
     align-items: center;
     margin-bottom: 2rem;
 
+    &:last-child {
+      margin-bottom: 0;
+    }
+
   }
   &-name{
     display: flex;
@@ -107,7 +112,7 @@
 }
 .chat {
   width: 319.86px;
-height: 239.16px;
+  max-height: 239.16px;
   margin: 8rem 4rem;
   &__user {
     padding: 2rem;
@@ -150,6 +155,9 @@ height: 239.16px;
   }
   &__message {
     margin-top: 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
   &__text {
     max-width: 16.6rem;
@@ -160,12 +168,18 @@ height: 239.16px;
     background: #f5f5f5;
     border-radius: 10px;
     padding: 1rem;
-    &:not(:last-child) {
-      margin-bottom: 1rem;
-    }
   }
 }
 
 .footer__logo {
   margin-bottom: 2rem;
+}
+
+.visible {
+  display: block;
+}
+
+.hidden {
+  display: none;
+
 }

@@ -46,7 +46,7 @@ export const DropdownSpecialistProfile = ({ text }) => {
               </Link>
             </li>
             <li>
-              <a href='/'>Вход для специалистов</a>
+            <Link to={'/notfound'}>Вход для специалистов</Link>
             </li>
           </nav>
         </div>

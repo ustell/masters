@@ -1,10 +1,8 @@
 /** @format */
 
 import Main from "./pages/main";
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Route, Routes, createRoutesFromElements } from "react-router-dom";
 
 import { Path } from "./path";
 import Register from "./pages/registration/Index";
@@ -21,6 +19,7 @@ import FAQ from "./pages/FAQ";
 import { RegistrationPages2 } from "./pages/registration/RegistrationPages2";
 import ActiveOrdersAll from "./pages/active_order_all";
 import MainSpecialist from "./pages/main_specialist";
+import { NotFound } from "./pages/NotFound/NotFound";
 
 function App() {
   const router = createBrowserRouter([
@@ -76,12 +75,16 @@ function App() {
       path: Path.registerMasters,
       element: <MainSpecialist />,
     },
+    {
+      path: Path.notfound,
+      element: <NotFound />,
+    },
   ]);
   return (
-    <div className='App'>
+    <div className="App">
       <RouterProvider router={router}>
-        <Header />
-        <Footer />
+          <Header />
+          <Footer />
       </RouterProvider>
     </div>
   );

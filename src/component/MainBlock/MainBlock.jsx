@@ -22,6 +22,29 @@ function MainBlock() {
       navigate(Path.filterStepOne);
     }, 1000);
   };
+
+
+  const [count, setCount] = useState(0);
+  const targetCount = 12856;
+  const duration = 2000; // Время анимации в миллисекундах
+  const step = (targetCount / duration) * 10; // Шаг увеличения значения счетчика
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      if (count < targetCount) {
+        setCount((prevCount) => prevCount + step);
+      } else {
+        setCount(targetCount); // Устанавливаем конечное значение счетчика
+        clearInterval(interval); // Останавливаем интервал после достижения конечного значения
+      }
+    }, 10); // Интервал установлен на 10 миллисекунд для более плавной анимации
+
+    return () => clearInterval(interval);
+  }, [count, targetCount]);
+
+  const formattedCount = Math.floor(count).toLocaleString();
+
+
   return (
     <>
       <Header />
@@ -32,7 +55,7 @@ function MainBlock() {
           </h1>
           <div className='main__subtitle'>
             <span className='mainsubtitle'>
-              12 856 клиентов доверили дела мастерам
+              {formattedCount} клиентов доверили дела мастерам
             </span>
           </div>
           <div className='mainsearch'>

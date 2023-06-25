@@ -53,6 +53,7 @@ export const FilterPages = () => {
     [array1, array2] = userName;
   }
 
+
   // file date
   const [file, setFile] = useState();
 
@@ -69,7 +70,12 @@ export const FilterPages = () => {
 
   const [textValue, setTextValue] = React.useState("");
 
+    // _FileSave
+    const [fileInfo, setFileInfo] = React.useState(null);
+
   // states
+
+
 
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -92,6 +98,8 @@ export const FilterPages = () => {
     }
   };
 
+
+
   const handleCheckboxChange2 = (id) => {
     if (selectedOption2 === id) {
       setSelectedOption2(null);
@@ -100,7 +108,6 @@ export const FilterPages = () => {
     }
   };
 
-  // img
   const handleFileChange = (event) => {
     const selectedFile = event.target.files[0];
     if (selectedFile) {
@@ -108,6 +115,7 @@ export const FilterPages = () => {
       reader.onload = (e) => {
         const fileData = e.target.result;
         setFile(fileData);
+        setFileInfo(selectedFile.name);
       };
       reader.readAsDataURL(selectedFile);
     }
@@ -277,7 +285,7 @@ export const FilterPages = () => {
                     htmlFor='filter__img1'
                   >
                     <img src={plus} alt='plus' />
-                    <span>Добавить фото или файл</span>
+                    <span>{fileInfo ? fileInfo : 'Добавить фото или файл'}</span>
                   </label>
                 </div>
                 <h3 className='filter__title'>

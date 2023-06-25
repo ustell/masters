@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { Path } from "../../path";
+
 export const DropdownSpecialist = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -40,12 +41,12 @@ export const DropdownSpecialist = ({ text }) => {
         <div className='dropdown__menu-specialist'>
           <nav className='specialist__nav'>
             <li>
-              <Link to={Path.registerMasters}>
+              <Link to={'/masters/register'}>
                 Регистрация специалистов
               </Link>
             </li>
             <li>
-              <a href='/'>Вход для специалистов</a>
+              <Link to={'/notfound'}>Вход для специалистов</Link>
             </li>
           </nav>
         </div>
