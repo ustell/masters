@@ -6,8 +6,12 @@ import { Path } from "../../path";
 
 const data = [
   { id: 1, text: "Заказ", page: Path.filterStepOne },
-  { id: 2, text: "Часто задаваемые вопросы", page: Path.filterStepOne },
-  { id: 3, text: "Специалисты", page: Path.FAQ },
+  {
+    id: 2,
+    text: "Часто задаваемые вопросы",
+    page: Path.FAQ,
+  },
+  { id: 3, text: "Специалисты", page: Path.SpecPage },
 ];
 
 export const AsideNav = () => {
@@ -23,9 +27,7 @@ export const AsideNav = () => {
     localStorage.setItem("activeItem", activeItem);
   }, [activeItem]);
 
-  const dataID = data.map((item) => (
-    item.id
-  ))
+  const dataID = data.map((item) => item.id);
 
   const [dataState, setDataState] = React.useState(dataID);
 
@@ -37,10 +39,12 @@ export const AsideNav = () => {
     <aside className='aside'>
       <nav className='aside__nav'>
         <ul className='aside__container'>
-        {data.map((item) => (
+          {data.map((item) => (
             <Link
               to={item.page}
-              className={dataState === item.id ? "active" : ""}
+              className={
+                dataState === item.id ? "active" : ""
+              }
               key={item.id}
               onClick={() => handleClickOnNavBar(item.id)}
             >

@@ -3,14 +3,20 @@
 import React, { useState } from "react";
 import { Link } from "react-scroll";
 import { Path } from "../../path";
+import { useNavigate } from "react-router";
 
 export const DropdownSpecialistProfile = ({ text }) => {
   const [isOpen, setIsOpen] = useState(false);
-
+  const navigate = useNavigate();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-
+  const nav = () => {
+    navigate(Path.specialist);
+  };
+  const notfound = () => {
+    navigate(Path.notfound);
+  };
   return (
     <div className='dropdown-menu'>
       <div
@@ -41,12 +47,14 @@ export const DropdownSpecialistProfile = ({ text }) => {
         <div className='dropdown__menu-specialist dropdown__menu-specialistProfile'>
           <nav className='specialist__nav'>
             <li>
-              <Link to={Path.registerMasters}>
+              <Link onClick={nav}>
                 Регистрация специалистов
               </Link>
             </li>
             <li>
-            <Link to={'/notfound'}>Вход для специалистов</Link>
+              <Link onClick={notfound}>
+                Вход для специалистов
+              </Link>
             </li>
           </nav>
         </div>

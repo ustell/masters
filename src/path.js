@@ -1,6 +1,5 @@
 /** @format */
 
-
 export const Path = {
   home: "/",
   register: "/client/register",
@@ -14,7 +13,8 @@ export const Path = {
   finalRegister: "/register/final",
   myOrder: "/client/order",
   myProfile: "/client/profile",
-  registerMasters:"/masters/register",
-  notfound:"/notfound",
-  specialist:"/specialist",
+  registerMasters: "/masters/register",
+  notfound: "/notfound",
+  specialist: "/specialist",
+  SpecPage: "/order/specialist",
 };
