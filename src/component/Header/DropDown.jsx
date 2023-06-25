@@ -2,57 +2,27 @@
 
 import React, { useState } from "react";
 
-const DropdownMenu = ({ text }) => {
+const DropdownMenu = ({ text, cities }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [searchValue, setSearchValue] = useState("");
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const cities = [
-    {
-      id: 1,
-      sity: "Анкара",
-    },
-    {
-      id: 2,
-      sity: "Стамбул",
-    },
-    {
-      id: 3,
-      sity: "Измир",
-    },
-    {
-      id: 4,
-      sity: "Бурса",
-    },
-    {
-      id: 5,
-      sity: "Конья",
-    },
-    {
-      id: 6,
-      sity: "Бодрум",
-    },
-    {
-      id: 7,
-      sity: "Кемер",
-    },
-    {
-      id: 8,
-      sity: "Анталия",
-    },
-    {
-      id: 9,
-      sity: "Мармарис",
-    },
-  ];
+
+  // cities state
+  const [citySelected, setCitySelected] = useState('Анкара');
+
+  const handleSityClick = (city) => {
+    setCitySelected(city);
+  };
 
   return (
     <div className="dropdown-menu">
       <div className="dropdown-menu-toggle" onClick={toggleMenu}>
-        <p>{text}</p>
+        <p>{citySelected}</p>
         <svg
           className={`rotating-svg ${isOpen ? "rotate" : ""}`}
           width="10"
@@ -94,7 +64,7 @@ const DropdownMenu = ({ text }) => {
                   }
                 })
                 .map((item, i) => (
-                  <li key={item.id} className="dropdown-menu-item">
+                  <li key={item.id} className="dropdown-menu-item" onClick={() => handleSityClick(item.sity)}>
                     {item.sity}
                   </li>
                 ))}

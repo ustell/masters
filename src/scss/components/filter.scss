@@ -38,7 +38,7 @@
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
-  margin-bottom: 4rem;
+
   &:last-child {
     margin-right: 0;
   }
@@ -237,6 +237,7 @@
 }
 
 .filter--img {
+  overflow: hidden;
   position: relative;
   width: 100%;
   max-width: 35rem;

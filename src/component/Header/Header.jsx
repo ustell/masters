@@ -37,6 +37,45 @@ function Header() {
     setUseFio(name);
   }, [name]);
 
+  const cities = [
+    {
+      id: 1,
+      sity: "Анкара",
+    },
+    {
+      id: 2,
+      sity: "Стамбул",
+    },
+    {
+      id: 3,
+      sity: "Измир",
+    },
+    {
+      id: 4,
+      sity: "Бурса",
+    },
+    {
+      id: 5,
+      sity: "Конья",
+    },
+    {
+      id: 6,
+      sity: "Бодрум",
+    },
+    {
+      id: 7,
+      sity: "Кемер",
+    },
+    {
+      id: 8,
+      sity: "Анталия",
+    },
+    {
+      id: 9,
+      sity: "Мармарис",
+    },
+  ];
+
   return (
     <header className='header'>
       <nav className='header__menu'>
@@ -47,7 +86,7 @@ function Header() {
             </Link>
           </li>
           <li>
-            <DropdownMenu text={"Анталия"} />
+            <DropdownMenu text={"Анталия"} cities={cities}/>
           </li>
         </ul>
         {useUser ? (

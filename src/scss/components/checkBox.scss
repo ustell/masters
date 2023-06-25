@@ -1,49 +1,106 @@
 .custom-checkbox {
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
-  .custom-checkbox input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-  }
-  
-  .checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 18px;
-    width: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #E3E3E3;
-  }
-  
-  .checkmark::after {
-    content: "";
-    position: absolute;
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 6px;
-    height: 6px;
-    background-color: #000;
-    border-radius: 50%;
-  }
-  
-  .custom-checkbox input:checked ~ .checkmark::after {
-    display: block;
-  }
-  .text{
-    margin-left: 20px;
-    font-size: 15px;
-  }
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+  cursor: pointer;
+}
 
-  .block-checkbox{
-    display: flex;
-  }
+.custom-checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 18px;
+  width: 18px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkmark::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 6px;
+  height: 6px;
+  background-color: #000;
+  border-radius: 50%;
+}
+
+.custom-checkbox input:checked ~ .checkmark::after {
+  display: block;
+}
+.text{
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+.block-checkbox{
+  display: flex;
+  opacity: 1;
+}
+
+.checked {
+  display: block;
+}
+
+.unchecked {
+  display: flex;
+  opacity: 1;
+}
+
+.block-checkbox {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  background-color: none;
+
+
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.custom-checkbox input[type="checkbox"]:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.text {
+  margin-left: 5px;
+}

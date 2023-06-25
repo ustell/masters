@@ -69,6 +69,7 @@ textarea , input, span{
 @import "./components/profile.scss";
 @import "./components/filter.scss";
 @import './components/faq.scss';
+@import './components/checkBox.scss';
 @import "./components/registration.scss";
 
 // forms
@@ -77,6 +78,9 @@ textarea , input, span{
 
 // pages
 @import "./components/aside.scss";
+
+// notfound
+@import "./components//notfound.scss";
 
 
 
