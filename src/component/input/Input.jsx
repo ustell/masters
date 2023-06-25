@@ -10,7 +10,7 @@ function Input({ value, onChange }) {
       type='text'
       value={value}
       onChange={onChange}
-      placeholder='Услуга или специалист'
+      placeholder={'Услуга или специалист'}
     />
   );
 }

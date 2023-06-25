@@ -1,96 +1,38 @@
-import React, { useRef } from 'react';
-import { motion, useAnimation } from 'framer-motion';
-import '../../scss/components/SpecialistPrice.scss';
+import React from 'react';
 
-function SpecialistPriceBlock() {
-  const controlsLeft = useAnimation();
-  const controlsRight = useAnimation();
-  const specialistPriceBlock = useRef(null);
+import '../../scss/components/SpecialistRegister.scss';
 
-  React.useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const element = specialistPriceBlock.current;
+import QR from '../../assets/img/QR.png';
 
-      if (scrollPosition > element.offsetTop - windowHeight * 0.8) {
-        controlsLeft.start('visible');
-        controlsRight.start('visible');
-      }
-    };
+import Input from '../input/Input';
+import Btn from '../Btn/Btn';
 
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [controlsLeft, controlsRight]);
-
+function SpecialistRegisterBlock() {
   return (
-    <section ref={specialistPriceBlock} className="specialistPriceBlock">
-      <motion.h3
-        initial={{ opacity: 0, x: -100 }}
-        animate={controlsLeft}
-        transition={{ duration: 0.5 }}
-        variants={{
-          visible: {
-            opacity: 1,
-            x: 0,
-          },
-        }}
-        className="section__title specialistPriceBlock__title"
-        id="specialistPriceBlock">
-        Тарифы
-      </motion.h3>
-      <motion.div className="specialistPriceBlock__block">
-        <motion.ul
-          initial={{ opacity: 0, x: -100 }}
-          animate={controlsLeft}
-          transition={{ duration: 0.5 }}
-          variants={{
-            visible: {
-              opacity: 1,
-              x: 0,
-            },
-          }}
-          className="specialistPriceBlock__list specialistPriceBlock__pink">
-          <li>
-            <p className="specialistPriceBlock__list-title">Плата за отклик</p>
-          </li>
-          <li>
-            <p>Вы платите сразу, за предложение услуг.</p>
-            <p>Больше комиссий нет, но не каждый отклик приводит к заказу.</p>
-          </li>
-          <li>
-            <p>Для первого заказа обычно нужно 7-10 откликов</p>
-          </li>
-        </motion.ul>
-
-        <motion.ul
-          initial={{ opacity: 0, x: 100 }}
-          animate={controlsRight}
-          transition={{ duration: 0.5 }}
-          variants={{
-            visible: {
-              opacity: 1,
-              x: 0,
-            },
-          }}
-          className="specialistPriceBlock__list specialistPriceBlock__yellow">
-          <li>
-            <p className="specialistPriceBlock__list-title">Комиссия за заказ</p>
-          </li>
-          <li>
-            <p>Вы платите потом, если получите заказ.</p>
-            <p>Откликнуться можно бесплатно.</p>
-          </li>
-          <li>
-            <p>Тариф откроется после 10 платных откликов</p>
-          </li>
-        </motion.ul>
-      </motion.div>
+    <section className="SpecialistRegisterBlock">
+      <div className="SpecialistRegisterBlock__block">
+        <h3 className="SpecialistRegisterBlocktitle sectiontitle">
+          Зарегестрируйтесь по номеру телефона
+        </h3>
+        <div className="SpecialistRegisterBlock__reg">
+        <input
+        className='search__input Input'
+        type='text'
+        value={''}
+        onChange={''}
+        placeholder={'+7 777 777 777'}
+          />
+          <button className='search__btn search__spectialist'>{'Зарегестрироваться'}</button>
+        </div>
+      </div>
+      <div className="SpecialistRegisterBlock-block">
+        <div className="SpecialistRegisterBlock__content">
+          <img src={QR} alt="" className="SpecialistRegisterBlock__img" />
+          <p className="SpecialistRegisterBlock__subtitle"> Наведите камеру телефона, чтобы отсканировать QR- код и скачать приложение </p>
+        </div>
+      </div>
     </section>
   );
 }
 
-export default SpecialistPriceBlock;
+export default SpecialistRegisterBlock;

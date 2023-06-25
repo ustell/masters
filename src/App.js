@@ -20,6 +20,7 @@ import { RegistrationPages2 } from "./pages/registration/RegistrationPages2";
 import ActiveOrdersAll from "./pages/active_order_all";
 import MainSpecialist from "./pages/main_specialist";
 import { NotFound } from "./pages/NotFound/NotFound";
+import SpecialistPage from "./pages/main_specialist/index";
 
 function App() {
   const router = createBrowserRouter([
@@ -78,6 +79,10 @@ function App() {
     {
       path: Path.notfound,
       element: <NotFound />,
+    },
+    {
+      path: Path.specialist,
+      element: <SpecialistPage />,
     },
   ]);
   return (

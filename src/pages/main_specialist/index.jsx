@@ -18,23 +18,19 @@ function MainSpecialist() {
   return (
     <>
       <Header />
-      <SpecialistMainBlock id={SpecialistMainBlock} />
+      <SpecialistMainBlock />
 
-      <SpecialistRegisterBlock
-        id={SpecialistRegisterBlock}
-      />
+      <SpecialistRegisterBlock />
 
-      <SpecialistHowWorkBlock id={SpecialistHowWorkBlock} />
+      <SpecialistHowWorkBlock />
 
-      <SpecialistPriceBlock id={SpecialistPriceBlock} />
+      <SpecialistPriceBlock />
 
-      <SpecialistAnswerBlock id={SpecialistAnswerBlock} />
+      <SpecialistAnswerBlock />
 
-      <SpecialistConectionBlock
-        id={SpecialistConectionBlock}
-      />
+      <SpecialistConectionBlock />
 
-      <SpecialistRegion id={SpecialistRegion} />
+      <SpecialistRegion />
       <Footer />
     </>
   );

@@ -15,5 +15,6 @@ export const Path = {
   myOrder: "/client/order",
   myProfile: "/client/profile",
   registerMasters:"/masters/register",
-  notfound:"/notfound"
+  notfound:"/notfound",
+  specialist:"/specialist",
 };
