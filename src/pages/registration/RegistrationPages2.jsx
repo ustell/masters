@@ -22,14 +22,15 @@ export const RegistrationPages2 = () => {
     }
   }, [dispatch]);
   const userName = useSelector(
-    (state) => state.auth.userName?.data?.telephone,
+    (state) => state.auth.userName,
   );
+  const telephone = userName?.data?.data?.telephone;
 
   const register = async (e) => {
     e.preventDefault();
     console.log("hello");
     await dispatch(
-      fetchUpdate({ telephone: userName, name, email }),
+      fetchUpdate({ telephone: telephone, name, email }),
     );
     navigate(Path.home);
   };

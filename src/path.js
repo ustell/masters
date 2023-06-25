@@ -11,5 +11,5 @@ export const Path = {
   finalStep: "/filter/step/final",
   FAQ: "/filter/FAQ",
   finalRegister: "/register/final",
-  myOrder:'client/order'
+  myOrder: "/client/order",
 };

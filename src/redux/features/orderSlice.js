@@ -26,10 +26,21 @@ export const fetchOrder = createAsyncThunk(
   },
 );
 
+export const fetchAllOrder = createAsyncThunk(
+  "post/getAll",
+  async (params) => {
+    console.log(params);
+    const { data } = await axios.post(
+      "/post/postAll",
+      params,
+    );
+    return data;
+  },
+);
+
 export const fetchCreateOrder = createAsyncThunk(
   "post/create",
-  async ( params ) => {
-    console.log(params);
+  async (params) => {
     const { data } = await axios.post(
       "/post/create",
       params,
@@ -53,6 +64,18 @@ const orderSlice = createSlice({
         state.userName = action.payload;
       })
       .addCase(fetchOrder.rejected, (state, action) => {
+        state.status = "failed";
+        state.error = action.error.message;
+      })
+      // sec
+      .addCase(fetchAllOrder.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(fetchAllOrder.fulfilled, (state, action) => {
+        state.status = "succeeded";
+        state.userName = action.payload;
+      })
+      .addCase(fetchAllOrder.rejected, (state, action) => {
         state.status = "failed";
         state.error = action.error.message;
       });

@@ -16,11 +16,12 @@ function OrderCreateProfile() {
   const token = localStorage.getItem("token");
 
   const userName = useSelector(
-    (state) => state.auth.userName?.data?.name,
+    (state) => state.auth.userName,
   );
-  const userID = useSelector(
-    (state) => state.auth.userName?.data?.id,
-  );
+
+  const name = userName?.data?.data?.name;
+  const id = userName?.data?.data?._id;
+  console.log(name);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -37,10 +38,7 @@ function OrderCreateProfile() {
         <AsideNav />
         <section className='main__aside'>
           {token ? (
-            <OrderProfile
-              userName={userName}
-              userID={userID}
-            />
+            <OrderProfile userName={name} userID={id} />
           ) : (
             <NotClient />
           )}

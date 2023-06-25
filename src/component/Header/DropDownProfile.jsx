@@ -1,6 +1,8 @@
 /** @format */
 
 import React from "react";
+import { Link } from "react-router-dom";
+import { Path } from "../../path";
 
 export const DropDownProfile = ({ Fio, profileWord }) => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -52,7 +54,7 @@ export const DropDownProfile = ({ Fio, profileWord }) => {
               <a href='/'>Профиль и настройка</a>
             </li>
             <li>
-              <a href='/'>Мои заказы</a>
+              <Link to={Path.myOrder}>Мои заказы</Link>
             </li>
             <li>
               <a onClick={logout} href='/'>
