@@ -29,7 +29,7 @@
       border: none;
       font-weight: 500;
       font-size: 1.8rem;
-      line-height: 2.2rem;
+      line-height: 1;
       cursor: pointer;
     }
   }
@@ -45,6 +45,9 @@
     padding-top: 4rem;
 
     position: relative;
+    li{
+      cursor: pointer;
+    }
     &-title {
       padding-right: 1.6rem;
     }
