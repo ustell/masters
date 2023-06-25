@@ -1,0 +1,38 @@
+.SpecialistMain {
+  padding: 0rem 16rem 0 16rem;
+  display: flex;
+  align-items: flex-end;
+  margin-top: 12rem;
+  justify-content: space-between;
+  align-items: center;
+  // left side
+  &__title {
+    font-weight: 600;
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: 2px;
+    span {
+      display: block;
+    }
+  }
+  &__subtitle {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #a8a8a8;
+    padding-top: 2rem;
+  }
+
+  .SpecialistMain__content {
+    width: 100%;
+  }
+  // right side
+
+  .SpecialistMain__img {
+    z-index: 1;
+  }
+}
+
+.SpecialistMain__subtitle {
+  margin-bottom: 2rem;
+}

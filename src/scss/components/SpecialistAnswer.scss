@@ -1,0 +1,54 @@
+.specialistAnswerBlock {
+  padding: 4rem 16rem 4rem 16rem;
+  background-color: #ecf3ff;
+  &__title {
+    span {
+      display: block;
+      padding-top: 1rem;
+    }
+    padding-bottom: 4rem;
+  }
+  &__chat {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    &:first-of-type {
+      justify-content: end;
+    }
+    &:last-child {
+      flex-direction: column;
+    }
+  }
+
+  &__text {
+    width: fit-content;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    span {
+      padding: 0 1rem;
+    }
+  }
+  &__img {
+  }
+  &__hint {
+    padding: 0px 20.9rem;
+    padding-top: 8rem;
+
+    &-content {
+      gap: 2rem;
+
+      display: flex;
+      align-content: stretch;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    p {
+      margin-bottom: 0;
+    }
+  }
+}

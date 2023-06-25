@@ -51,7 +51,9 @@ export const DropDownProfile = ({ Fio, profileWord }) => {
         <div className='dropdown__menu-specialist dropDown__menu-profile'>
           <nav className='specialist__nav'>
             <li>
-              <a href='/'>Профиль и настройка</a>
+              <Link to={Path.myProfile}>
+                Профиль и настройка
+              </Link>
             </li>
             <li>
               <Link to={Path.myOrder}>Мои заказы</Link>

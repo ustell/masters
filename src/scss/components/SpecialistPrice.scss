@@ -1,0 +1,41 @@
+.specialistPriceBlock {
+  padding: 4rem 16rem 0 16rem;
+  margin-bottom: 8rem;
+  &__title {
+    padding-bottom: 4rem;
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+
+    padding: 2rem;
+    &:last-child {
+      margin-left: 2rem;
+    }
+    li {
+      &:not(:last-child) {
+        margin-bottom: 4.4rem;
+      }
+    }
+    li p {
+    }
+    &-title {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 17px;
+
+      color: #333333;
+    }
+  }
+  &__pink {
+    background: #ffe7f7;
+  }
+  &__yellow {
+    background: #faf5e2;
+  }
+}
