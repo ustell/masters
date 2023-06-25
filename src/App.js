@@ -20,6 +20,7 @@ import OrderCreateProfile from "./pages/order_final";
 import FAQ from "./pages/FAQ";
 import { RegistrationPages2 } from "./pages/registration/RegistrationPages2";
 import ActiveOrdersAll from "./pages/active_order_all";
+import MainSpecialist from "./pages/main_specialist";
 
 function App() {
   const router = createBrowserRouter([
@@ -66,6 +67,14 @@ function App() {
     {
       path: Path.myOrder,
       element: <ActiveOrdersAll />,
+    },
+    {
+      path: Path.myProfile,
+      element: <ProfilePage />,
+    },
+    {
+      path: Path.registerMasters,
+      element: <MainSpecialist />,
     },
   ]);
   return (

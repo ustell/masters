@@ -12,4 +12,6 @@ export const Path = {
   FAQ: "/filter/FAQ",
   finalRegister: "/register/final",
   myOrder: "/client/order",
+  myProfile: "/client/profile",
+  registerMasters:"/masters/register"
 };

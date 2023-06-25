@@ -1,0 +1,28 @@
+.SpecialistRegisterBlock {
+  padding: 4rem 16rem 4rem 16rem;
+  display: flex;
+  margin-top: 12rem;
+  justify-content: space-between;
+  background-color: #ecf3ff;
+  margin-bottom: 8rem;
+  &__block {
+    width: 55%;
+  }
+  &__title {
+    padding-bottom: 4rem;
+  }
+  &__reg {
+  }
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__img {
+    padding-bottom: 2rem;
+  }
+  &__subtitle {
+    color: #a8a8a8;
+    display: flex;
+  }
+}

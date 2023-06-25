@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PhoneInput from "react-phone-number-input";
 import {
   fetchRegister,
@@ -86,7 +86,12 @@ function Registration() {
         "token",
         data.payload.token,
       );
-      navigate(Path.finalRegister);
+      if (data.payload.status) {
+        navigate(Path.finalRegister);
+      } else {
+        navigate(Path.home);
+      }
+
       return data;
     }
   };
@@ -147,29 +152,6 @@ function Registration() {
               </form>
             </>
           ) : (
-            // <>
-            //   <p>
-            //     Код отправлен на номер:
-            //     <span>{telephone}</span>
-            //   </p>
-            //   <p onClick={toggleMenu}>Изменить номер</p>
-            //   <form onSubmit={verify}>
-            //     <input
-            //       type='number'
-            //       value={verificate}
-            //       onChange={(e) =>
-            //         setVerificate(e.target.value)
-            //       }
-            //     />
-            //     <button
-            //       className='registration__login registration__btn'
-            //       type='submit'
-            //       onClick={nextStep}
-            //     >
-            //       Продолжить
-            //     </button>
-            //   </form>
-            // </>
             <>
               <h3 className='registration__title'>
                 Вход и регистрация

@@ -1,0 +1,20 @@
+.region {
+  padding: 0 16rem 0 16rem;
+  &__title {
+    font-size: 36px;
+    line-height: 40px;
+    font-weight: 500;
+    color: #000;
+    margin-bottom: 1rem;
+    span {
+      color: #45ae43;
+    }
+  }
+  &__subtitle {
+    font-size: 15px;
+    line-height: 18px;
+
+    color: #a5a5a5;
+    margin-bottom: 45px;
+  }
+}
