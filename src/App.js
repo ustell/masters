@@ -1,8 +1,15 @@
 /** @format */
 
 import Main from "./pages/main";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { Route, Routes, createRoutesFromElements } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import {
+  Route,
+  Routes,
+  createRoutesFromElements,
+} from "react-router-dom";
 
 import { Path } from "./path";
 import Register from "./pages/registration/Index";
@@ -21,6 +28,7 @@ import ActiveOrdersAll from "./pages/active_order_all";
 import MainSpecialist from "./pages/main_specialist";
 import { NotFound } from "./pages/NotFound/NotFound";
 import SpecialistPage from "./pages/main_specialist/index";
+import Specialist from "./pages/specialist/index";
 
 function App() {
   const router = createBrowserRouter([
@@ -84,12 +92,16 @@ function App() {
       path: Path.specialist,
       element: <SpecialistPage />,
     },
+    {
+      path: Path.SpecPage,
+      element: <Specialist />,
+    },
   ]);
   return (
-    <div className="App">
+    <div className='App'>
       <RouterProvider router={router}>
-          <Header />
-          <Footer />
+        <Header />
+        <Footer />
       </RouterProvider>
     </div>
   );

@@ -21,6 +21,7 @@ function OrderProfile({ userName, userID }) {
       : "";
   const logout = () => {
     localStorage.removeItem("token");
+    window.location.reload();
   };
 
   const data = localStorage.getItem("order");

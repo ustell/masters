@@ -3,7 +3,7 @@
 import axios from "axios";
 // для сокращениея запросов axios
 const instance = axios.create({
-  baseURL: "http://localhost:4000",
+  baseURL: "https://4338-37-99-47-159.ngrok-free.app",
 });
 // middleware для проверки авторизации
 instance.interceptors.request.use((config) => {

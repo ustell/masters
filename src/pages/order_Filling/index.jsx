@@ -23,6 +23,7 @@ function OrderFilling() {
   const [error, setError] = useState(false);
   const dispatch = useDispatch();
   const handleBlockClick = (content) => {
+    setInputValue(content);
     localStorage.setItem("title", content);
     dispatch(fetchOrder({ content }));
     setError(false);
