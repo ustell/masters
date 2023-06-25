@@ -228,7 +228,7 @@ export const FilterPages = () => {
                     htmlFor='filter_2'
                     onClick={toggleOption}
                   >
-                    Выбрать улугу
+                    Выбрать уcлугу
                     <img
                       className={`arrow ${
                         isOpen2 ? "open" : ""
