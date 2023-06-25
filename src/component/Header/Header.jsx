@@ -28,13 +28,14 @@ function Header() {
     }
   }, [dispatch]);
   const userName = useSelector(
-    (state) => state.auth.userName?.data?.name,
+    (state) => state.auth.userName,
   );
-  console.log(userName);
+  const name = userName?.data?.data?.name;
+  console.log(name);
 
   useEffect(() => {
-    setUseFio(userName);
-  }, [userName]);
+    setUseFio(name);
+  }, [name]);
 
   return (
     <header className='header'>
