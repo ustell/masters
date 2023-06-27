@@ -14,7 +14,7 @@ import Calendar from "react-calendar";
 import Header from "../../component/Header/Header";
 import { Footer } from "../../component/Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCreateOrder } from "../../redux/features/orderSlice";
+
 import { Link, useNavigate } from "react-router-dom";
 import { Path } from "../../path";
 import { useState } from "react";

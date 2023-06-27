@@ -11,8 +11,6 @@ import { useNavigate } from "react-router-dom";
 import { Path } from "../../path";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllOrder } from "../../redux/features/orderSlice";
-import { fetchUserName } from "../../redux/features/authSlice";
 import Google from "../../assets/img/google.svg";
 import { Layout } from "../../layout/Layout";
 
@@ -23,9 +21,7 @@ function ActiveOrdersAll() {
   const dispatch = useDispatch();
   const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    dispatch(fetchUserName({ token }));
-  }, [dispatch, token]);
+  useEffect(() => {}, []);
 
   const userName = useSelector(
     (state) => state.auth.userName,

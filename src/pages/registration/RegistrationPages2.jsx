@@ -3,39 +3,23 @@
 import { useEffect, useState } from "react";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchUserName } from "../../redux/features/authSlice";
-import { fetchUpdate } from "../../redux/features/clientAuth.slice";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../path";
 
 export const RegistrationPages2 = () => {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
 
-  useEffect(() => {
-    const token = localStorage.getItem("token");
 
-    if (token) {
-      dispatch(fetchUserName({ token }));
-    }
-  }, [dispatch]);
-  const userName = useSelector(
-    (state) => state.auth.userName,
-  );
-  const telephone = userName?.data?.data?.telephone;
 
   const register = async (e) => {
     e.preventDefault();
     console.log("hello");
-    await dispatch(
-      fetchUpdate({ telephone: telephone, name, email }),
-    );
-    navigate(Path.home);
+
   };
 
-  console.log(userName);
+
   return (
     <section className='registration'>
       <div className='registration__content'>

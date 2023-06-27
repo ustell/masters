@@ -10,7 +10,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { Element } from "react-scroll";
 
 import { AsideNavProfile } from "./AsideNavProfile";
-import { fetchUserName } from "../../redux/features/authSlice";
 import PhoneInput from "react-phone-number-input";
 import { Footer } from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
@@ -30,16 +29,11 @@ export const ProfilePage = () => {
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-  useEffect(() => {
-    dispatch(fetchUserName({ token }));
-  }, [dispatch, token]);
+  useEffect(() => {}, [dispatch, token]);
   const [telephone, setTelephone] = useState("");
-  const userName = useSelector(
-    (state) => state.auth.userName,
-  );
-  const name = userName?.data?.data?.name;
-  const telephoneNumber = userName?.data?.data?.telephone;
-  const email = userName?.data?.data?.email;
+  const name = "name";
+  const telephoneNumber = "8";
+  const email = "email";
   const profile =
     typeof name === "string"
       ? name.charAt(0).toUpperCase()

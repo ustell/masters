@@ -3,10 +3,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PhoneInput from "react-phone-number-input";
-import {
-  fetchRegister,
-  fetchVerify,
-} from "../../redux/features/clientAuth.slice";
+
 import Google from "../../assets/img/google.svg";
 import "./style.scss";
 import "react-phone-number-input/style.css";
@@ -55,9 +52,7 @@ function Registration() {
 
   const registration = async (e) => {
     e.preventDefault();
-    const data = await dispatch(
-      fetchRegister({ telephone }),
-    );
+    const data = 1;
 
     if (!data.payload) {
       alert("Не удалось зарегистрироваться");
@@ -70,12 +65,7 @@ function Registration() {
   const verify = async (e) => {
     e.preventDefault();
 
-    const data = await dispatch(
-      fetchVerify({
-        confirmationCode: verificate,
-        telephone: telephone,
-      }),
-    );
+    const data = await dispatch();
 
     if (!data.payload) {
       alert("Не удалось подтвердить регистрацию");
