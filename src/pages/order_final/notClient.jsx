@@ -7,11 +7,7 @@ import { Path } from "../../path";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import PhoneInput from "react-phone-number-input";
-import {
-  fetchRegister,
-  fetchVerify,
-} from "../../redux/features/clientAuth.slice";
-import Google from "../../assets/img/google.svg";
+
 import "./style.scss";
 import "react-phone-number-input/style.css";
 import { useNavigate } from "react-router-dom";
@@ -56,9 +52,6 @@ export const NotClient = () => {
 
   const registration = async (e) => {
     e.preventDefault();
-    const data = await dispatch(
-      fetchRegister({ telephone }),
-    );
 
     if (!data.payload) {
       alert("Не удалось зарегистрироваться");
@@ -68,15 +61,9 @@ export const NotClient = () => {
     }
   };
   const navigate = useNavigate();
+  const data = {};
   const verify = async (e) => {
     e.preventDefault();
-
-    const data = await dispatch(
-      fetchVerify({
-        confirmationCode: verificate,
-        telephone: telephone,
-      }),
-    );
 
     if (!data.payload) {
       alert("Не удалось подтвердить регистрацию");

@@ -6,10 +6,7 @@ import "./style.scss";
 
 import { Hint } from "../../component/MainBlock/Hint";
 import Input from "../../component/input/Input";
-import { Footer } from "../../component/Footer/Footer";
-import Header from "../../component/Header/Header";
 import { useDispatch } from "react-redux";
-import { fetchOrder } from "../../redux/features/orderSlice";
 import { useNavigate } from "react-router";
 import { Path } from "../../path";
 import arrowBlack from "../../assets/img/iconFilter/arrowBlack.png";
@@ -26,7 +23,7 @@ function OrderFilling() {
   const handleBlockClick = (content) => {
     setInputValue(content);
     localStorage.setItem("title", content);
-    dispatch(fetchOrder({ content }));
+    dispatch();
     setError(false);
     setTimeout(() => {
       navigate(Path.aside);
