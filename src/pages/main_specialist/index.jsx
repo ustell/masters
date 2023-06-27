@@ -13,11 +13,11 @@ import SpecialistConectionBlock from "../../component/SpecialistConection/Specia
 import SpecialistRegion from "../../component/SpecialistRegion/SpecialistRegion";
 import Header from "../../component/Header/Header";
 import { Footer } from "../../component/Footer/Footer";
+import { Layout } from "../../layout/Layout";
 
 function MainSpecialist() {
   return (
-    <>
-      <Header />
+    <Layout>
       <SpecialistMainBlock />
 
       <SpecialistRegisterBlock />
@@ -31,8 +31,7 @@ function MainSpecialist() {
       <SpecialistConectionBlock />
 
       <SpecialistRegion />
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
