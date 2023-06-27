@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllOrder } from "../../redux/features/orderSlice";
 import { fetchUserName } from "../../redux/features/authSlice";
 import Google from "../../assets/img/google.svg";
+import { Layout } from "../../layout/Layout";
 
 function ActiveOrdersAll() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -44,8 +45,7 @@ function ActiveOrdersAll() {
   };
 
   return (
-    <>
-      <Header />
+    <Layout>
       <section className='createOrder'>
         {userName?.data?.data &&
         userName.data.data.posts?.length === 0 ? (
@@ -176,8 +176,7 @@ function ActiveOrdersAll() {
           </div>
         )}
       </section>
-      <Footer />
-    </>
+    </Layout>
   );
 }
 

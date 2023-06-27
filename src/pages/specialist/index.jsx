@@ -14,7 +14,7 @@ import Masters from "../../assets/img/masters.png";
 import MastersTwo from "../../assets/img/masters-two.png";
 import MastersThree from "../../assets/img/masters-three.png";
 import MastersFour from "../../assets/img/masters-four.png";
-import { Layout } from "../../component/layout/Layout";
+
 import { AsideNav } from "../FilterPages/AsideNav";
 
 function Specialists({ comments, rating }) {
@@ -137,93 +137,89 @@ function Specialists({ comments, rating }) {
   };
 
   return (
-    <Layout>
-      <div className='conteiner__time'>
-        <AsideNav />
-        <section className='main__aside'>
-          <div className='specialists'>
-            <div className='specialists__details'>
-              <div className='specialists__details-title'>
-                Чтобы писать специалистам, заполните детали
-                заказа
-              </div>
-              <button className='specialists__details-btn'>
-                Заполнить детали заказа
-              </button>
+    <div className='conteiner__time'>
+      <AsideNav />
+      <section className='main__aside'>
+        <div className='specialists'>
+          <div className='specialists__details'>
+            <div className='specialists__details-title'>
+              Чтобы писать специалистам, заполните детали
+              заказа
             </div>
-
-            <div className='specialists__sort'>
-              <h3 className='specialists__sort-title'>
-                Сортировка:
-              </h3>
-              <button
-                className='specialists__sort-btn'
-                onClick={toggleDropdown}
-              >
-                <p>
-                  {sortBy === "comments"
-                    ? "Отзывам"
-                    : sortBy === "rating"
-                    ? "Рейтингу"
-                    : "Подходящие"}
-                </p>
-                <img
-                  className={`specialists__sort-icon ${
-                    isDropdownOpen ? "rotate" : ""
-                  }`}
-                  src={ArrowDown}
-                  alt='ArrowDown'
-                />
-              </button>
-              {isDropdownOpen && (
-                <ul className='specialists__sort-list'>
-                  <li
-                    onClick={() =>
-                      handleSortChange("comments")
-                    }
-                  >
-                    Отзывам
-                  </li>
-                  <li
-                    onClick={() =>
-                      handleSortChange("rating")
-                    }
-                  >
-                    Рейтингу
-                  </li>
-                </ul>
-              )}
-            </div>
-            {data.map((data) => (
-              <Specialist
-                key={data.id}
-                comments={data.comments}
-                rating={data.rating}
-                name={data.name}
-                time={data.time}
-                description={data.description}
-                university={data.university}
-                Fact={data.Fact}
-                recommendation={data.recommendation}
-                reviews={data.reviews}
-                servicesone={data.servicesone}
-                priceone={data.priceone}
-                servicestwo={data.servicestwo}
-                pricetwo={data.pricetwo}
-                servicesthree={data.servicesthree}
-                pricethree={data.pricethree}
-                allservis={data.allservis}
-                avatar={data.avatar}
-              />
-            ))}
-
-            <button className='specialists__prew dissable'>
-              Показать еще 20
+            <button className='specialists__details-btn'>
+              Заполнить детали заказа
             </button>
           </div>
-        </section>
-      </div>
-    </Layout>
+
+          <div className='specialists__sort'>
+            <h3 className='specialists__sort-title'>
+              Сортировка:
+            </h3>
+            <button
+              className='specialists__sort-btn'
+              onClick={toggleDropdown}
+            >
+              <p>
+                {sortBy === "comments"
+                  ? "Отзывам"
+                  : sortBy === "rating"
+                  ? "Рейтингу"
+                  : "Подходящие"}
+              </p>
+              <img
+                className={`specialists__sort-icon ${
+                  isDropdownOpen ? "rotate" : ""
+                }`}
+                src={ArrowDown}
+                alt='ArrowDown'
+              />
+            </button>
+            {isDropdownOpen && (
+              <ul className='specialists__sort-list'>
+                <li
+                  onClick={() =>
+                    handleSortChange("comments")
+                  }
+                >
+                  Отзывам
+                </li>
+                <li
+                  onClick={() => handleSortChange("rating")}
+                >
+                  Рейтингу
+                </li>
+              </ul>
+            )}
+          </div>
+          {data.map((data) => (
+            <Specialist
+              key={data.id}
+              comments={data.comments}
+              rating={data.rating}
+              name={data.name}
+              time={data.time}
+              description={data.description}
+              university={data.university}
+              Fact={data.Fact}
+              recommendation={data.recommendation}
+              reviews={data.reviews}
+              servicesone={data.servicesone}
+              priceone={data.priceone}
+              servicestwo={data.servicestwo}
+              pricetwo={data.pricetwo}
+              servicesthree={data.servicesthree}
+              pricethree={data.pricethree}
+              allservis={data.allservis}
+              avatar={data.avatar}
+            />
+          ))}
+
+          <button className='specialists__prew dissable'>
+            Показать еще 20
+          </button>
+        </div>
+      </section>
+    </div>
   );
 }
 

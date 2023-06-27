@@ -16,6 +16,7 @@ import arrowBlack from "../../assets/img/iconFilter/arrowBlack.png";
 import arrowWhite from "../../assets/img/iconFilter/arrow.png";
 import { AsideNav } from "../FilterPages/AsideNav";
 import { Link } from "react-router-dom";
+import { Layout } from "../../layout/Layout";
 
 function OrderFilling() {
   const navigate = useNavigate();
@@ -41,8 +42,7 @@ function OrderFilling() {
     }
   };
   return (
-    <>
-      <Header />
+    <Layout>
       <div className='conteiner__time'>
         <AsideNav />
         <section className='orderFilling  main__aside '>
@@ -119,7 +119,7 @@ function OrderFilling() {
           </div>
         </section>
       </div>
-    </>
+    </Layout>
   );
 }
 
