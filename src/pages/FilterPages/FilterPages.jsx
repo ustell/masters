@@ -18,6 +18,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Path } from "../../path";
 import { useState } from "react";
+import { Layout } from "../../layout/Layout";
 
 export const FilterPages = () => {
   const navigate = useNavigate();
@@ -53,7 +54,6 @@ export const FilterPages = () => {
     [array1, array2] = userName;
   }
 
-
   // file date
   const [file, setFile] = useState();
 
@@ -70,12 +70,10 @@ export const FilterPages = () => {
 
   const [textValue, setTextValue] = React.useState("");
 
-    // _FileSave
-    const [fileInfo, setFileInfo] = React.useState(null);
+  // _FileSave
+  const [fileInfo, setFileInfo] = React.useState(null);
 
   // states
-
-
 
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
   const [isOpen, setIsOpen] = React.useState(false);
@@ -97,8 +95,6 @@ export const FilterPages = () => {
       setSelectedOption(id);
     }
   };
-
-
 
   const handleCheckboxChange2 = (id) => {
     if (selectedOption2 === id) {
@@ -159,8 +155,7 @@ export const FilterPages = () => {
   };
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div className='conteiner__time'>
         <AsideNav />
         <section className='main__aside'>
@@ -285,7 +280,11 @@ export const FilterPages = () => {
                     htmlFor='filter__img1'
                   >
                     <img src={plus} alt='plus' />
-                    <span>{fileInfo ? fileInfo : 'Добавить фото или файл'}</span>
+                    <span>
+                      {fileInfo
+                        ? fileInfo
+                        : "Добавить фото или файл"}
+                    </span>
                   </label>
                 </div>
                 <h3 className='filter__title'>
@@ -400,6 +399,6 @@ export const FilterPages = () => {
           </div>
         </section>
       </div>
-    </>
+    </Layout>
   );
 };

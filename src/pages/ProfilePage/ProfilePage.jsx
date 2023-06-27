@@ -15,6 +15,7 @@ import { Footer } from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
 import { Link } from "react-router-dom";
 import { Path } from "../../path";
+import { Layout } from "../../layout/Layout";
 
 export const ProfilePage = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -42,8 +43,7 @@ export const ProfilePage = () => {
     localStorage.removeItem("token");
   };
   return (
-    <>
-      <Header />
+    <Layout>
       <div className='conteiner__time'>
         <AsideNavProfile />
         <section className='main__aside'>
@@ -232,7 +232,6 @@ export const ProfilePage = () => {
           </div>
         </section>
       </div>
-      <Footer />
-    </>
+    </Layout>
   );
 };
