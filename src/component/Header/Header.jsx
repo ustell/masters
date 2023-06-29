@@ -22,11 +22,11 @@ function Header() {
   const cities = [
     {
       id: 1,
-      sity: "Анкара",
+      sity: "Стамбул",
     },
     {
       id: 2,
-      sity: "Стамбул",
+      sity: "Анкара",
     },
     {
       id: 3,
@@ -87,7 +87,7 @@ function Header() {
           </li>
           <li>
             <DropdownMenu
-              text={"Анталия"}
+              text={"Стамбул"}
               cities={cities}
             />
           </li>
