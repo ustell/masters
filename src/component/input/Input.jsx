@@ -82,6 +82,10 @@ function Input({ inputValue, secondInput, responseValue }) {
     setSelectedValue(value);
     setIsListVisible(false);
     dispatch(fetchCategories(value));
+    localStorage.setItem(
+      "orderTitle",
+      value ? value : inputValue,
+    );
     setTimeout(() => {
       // Perform navigation after a delay
       navigate(Path.filterStepOne);
@@ -111,7 +115,8 @@ function Input({ inputValue, secondInput, responseValue }) {
           responseValue
         }
         onChange={
-          window.location.pathname === "/"
+          window.location.pathname === "/" ||
+          window.location.pathname === "/client/order"
             ? handleInputChange
             : item
         }

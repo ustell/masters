@@ -1,6 +1,10 @@
 .specialistPriceBlock {
   padding: 4rem 16rem 0 16rem;
   margin-bottom: 8rem;
+
+  @include breakpoint($laptop) {
+    padding: 4rem 12rem 0 12rem;
+  }
   &__title {
     padding-bottom: 4rem;
   }

@@ -1,5 +1,7 @@
 @import '../scss/libs/reset';
 @import "./variables.scss";
+@import "./mixins.scss";
+
 
 *,
 *::after,
@@ -68,7 +70,15 @@ textarea , input, span{
 @import "./components/asideNavProfile.scss";
 @import "./components/profile.scss";
 @import "./components/filter.scss";
+@import "./components/SpecialistRegion.scss";
+@import "./components/SpecialistRegister.scss";
+@import "./components/SpecialistHowWork.scss";
+@import "./components/SpecialistPrice.scss";
+@import "./components/SpecialistAnswer.scss";
+@import "./components/SpecialistConection.scss";
+@import "./components/howItsWork.scss";
 @import './components/faq.scss';
+@import './components/SpecialistMain.scss';
 @import './components/checkBox.scss';
 @import "./components/registration.scss";
 @import "./components/specialist__main.scss";

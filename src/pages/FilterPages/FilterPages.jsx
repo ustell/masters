@@ -11,9 +11,7 @@ import arrowBlack from "../../assets/img/iconFilter/arrowBlack.png";
 import arrowWhite from "../../assets/img/iconFilter/arrow.png";
 
 import Calendar from "react-calendar";
-import Header from "../../component/Header/Header";
-import { Footer } from "../../component/Footer/Footer";
-import { useDispatch, useSelector } from "react-redux";
+
 
 import { Link, useNavigate } from "react-router-dom";
 import { Path } from "../../path";
@@ -35,7 +33,7 @@ export const FilterPages = () => {
       textValue,
       file,
     };
-
+    localStorage.setItem("orderAll", JSON.stringify(data));
     navigate(Path.finalStep);
   };
   const backStep = () => {

@@ -8,8 +8,10 @@ import Popular from "../../component/Popular/Popular.jsx";
 import Region from "../../component/Region/Region";
 import Reviews from "../../component/Reviews/Reviews";
 import { Layout } from "../../layout/Layout";
+import ScrollToTop from "../../service/scrollTop";
 
 function Main() {
+  ScrollToTop();
   return (
     <Layout>
       <MainBLock />

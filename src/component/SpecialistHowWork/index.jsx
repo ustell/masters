@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 
-import '../../scss/components/SpecialistHowWork.scss';
+
 
 function SpecialistHowWorkBlock() {
   const controlsLeft1 = useAnimation();

@@ -63,8 +63,7 @@ function Header() {
     if (telephone) {
       dispatch(fetchUpdatedUserName(telephone))
         .then((action) => {
-          const updatedUserName = action.payload.name; // Access the 'name' property from the payload object
-
+          const updatedUserName = action.payload.name;
           setUseFio(updatedUserName);
           setUseUser(false);
         })
@@ -75,7 +74,6 @@ function Header() {
           );
         });
     }
-    
   }, [dispatch]);
 
   return (

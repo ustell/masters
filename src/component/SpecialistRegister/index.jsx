@@ -1,6 +1,6 @@
 import React from 'react';
 
-import '../../scss/components/SpecialistRegister.scss';
+
 
 import QR from '../../assets/img/QR.png';
 

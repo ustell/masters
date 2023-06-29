@@ -3,6 +3,12 @@
   background: #ecf3ff;
   margin-bottom: 8rem;
   overflow: hidden;
+
+  @include breakpoint($laptop) {
+    padding: 5.9rem 12rem 0 12rem;
+
+
+  }
   &__block {
     display: flex;
     justify-content: space-between;

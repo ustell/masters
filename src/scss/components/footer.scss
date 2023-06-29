@@ -3,8 +3,12 @@
   position: relative;
   padding: 4rem 16rem;
   z-index: $z-index__footer;
+
+  @include breakpoint($laptop) {
+    padding: 4rem 12rem;
+  }
   &__logo {
-    font-family: 'Rubik One';
+    font-family: "Rubik One";
     font-style: normal;
     font-weight: 400;
     font-size: 36px;
@@ -20,7 +24,9 @@
     // margin-bottom: 4rem;
   }
   &__link {
+    display: block;
     transition: color 0s;
+    color: $black;
     cursor: pointer;
     &:not(:last-child) {
       margin-bottom: 1.9rem;
@@ -96,7 +102,6 @@
 
     &-country {
       margin: 0px 1rem;
-
     }
     &-select {
       display: none;

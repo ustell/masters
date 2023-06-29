@@ -1,8 +1,13 @@
 .filter__filling {
-  padding: 4rem 0 0rem 13rem;
+  padding: 4rem 0 8rem 13rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @include breakpoint($laptop) {
+    padding: 4rem 0 16rem 13rem;
+
+  }
 }
 
 .filter__title {
@@ -100,7 +105,7 @@
 
 .filter__options {
   padding: 2rem;
-
+  text-transform: capitalize;
   display: none;
   gap: 2rem;
   flex-direction: column;
@@ -529,6 +534,10 @@ abbr  {
   left: 0;
   bottom: 4rem;
   z-index: 102;
+
+  @include breakpoint($laptop) {
+    padding: 0 12rem;
+  }
 }
 
 .filter__Goback--link {

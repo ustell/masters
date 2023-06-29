@@ -1,9 +1,14 @@
 .main {
   padding: 6rem 16rem 0 16rem;
   display: flex;
-  align-items: end;
+  align-items: center;
+  gap: 2rem;
   margin-top: 2rem;
   justify-content: space-between;
+
+  @include breakpoint($laptop) {
+    padding: 6rem 12rem 0 12rem;
+  }
 
   // left side
   &title {
@@ -12,6 +17,18 @@
     line-height: 80px;
     letter-spacing: 2px;
     margin-bottom: 2rem;
+
+    @include breakpoint($monitor) {
+      width: 65%;
+    }
+
+    @include breakpoint($monitor-litle) {
+      width: 80%;
+    }
+
+    @include breakpoint($laptop) {
+      width: 100%;
+    }
   }
   &subtitle {
     font-weight: 500;
@@ -22,6 +39,7 @@
     margin-bottom: 3rem;
   }
   &hint {
+    gap: 2rem;
     display: flex;
     flex-wrap: wrap;
     &-title {
@@ -40,12 +58,11 @@
   }
   // right side
 
-  .main__img{
+  .main__img {
     position: relative;
 
     z-index: 1;
   }
-
 }
 
 .main__blur {
@@ -61,15 +78,14 @@
 
 .mainsearch {
   width: 100%;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   display: flex;
-
-
 }
-.input{
+.input {
   width: 997px;
 }
 
 .main__subtitle {
   margin-bottom: 2rem;
 }
+

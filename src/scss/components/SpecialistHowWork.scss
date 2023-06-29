@@ -1,6 +1,10 @@
 .specialistHowWorkBlock {
   padding: 0 16rem 8.5rem 16rem;
 
+  @include breakpoint($laptop) {
+    padding: 0 12rem 8.5rem 12rem;
+  }
+
   &__content {
     display: flex;
     flex-wrap: wrap;

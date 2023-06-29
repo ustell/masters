@@ -4,7 +4,7 @@ import { useInView } from 'react-intersection-observer';
 
 import Reading from '../../assets/img/reading.png';
 
-import '../../scss/components/SpecialistAnswer.scss';
+
 
 function SpecialistAnswerBlock() {
   const controls = useAnimation();
