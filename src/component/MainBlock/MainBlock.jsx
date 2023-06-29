@@ -48,7 +48,6 @@ function MainBlock() {
 
   return (
     <>
-      <Header />
       <main className='main'>
         <div className='main__content'>
           <h1 className='maintitle'>

@@ -25,7 +25,12 @@ function OrderProfile({ userName, userID }) {
     window.location.reload();
   };
 
-  const data = localStorage.getItem("order");
+  const data = JSON.parse(localStorage.getItem("orderAll"));
+  const minPrice = data?.minPrice;
+  const maxPrice = data?.maxPrice;
+  const selectedOption = data?.selectedOption;
+  const option = data?.selectedOption2;
+  console.log(option);
   const title = useSelector(
     (state) => state.order?.categories[0]?.category,
   );
@@ -33,7 +38,16 @@ function OrderProfile({ userName, userID }) {
   const telephone = localStorage.getItem("telephone");
 
   const orderCreate = async () => {
-    await dispatch(fetchUpdatedUser({ telephone, title }));
+    await dispatch(
+      fetchUpdatedUser({
+        telephone,
+        title,
+        minPrice,
+        maxPrice,
+        selectedOption,
+        option,
+      }),
+    );
     navigate(Path.myOrder);
   };
 

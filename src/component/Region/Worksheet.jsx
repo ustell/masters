@@ -1,7 +1,9 @@
 /** @format */
 
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchCategories } from "../../redux/features/orderSlice";
 
 const specialist = [
   {
@@ -280,6 +282,12 @@ const specialist = [
 ];
 
 function WorkSheet({ title, text }) {
+  const dispatch = useDispatch();
+  const nav = async (item) => {
+    console.log(item.title);
+    await dispatch(fetchCategories(item.title));
+  };
+
   return (
     <div className='workSheet'>
       {/* block */}
@@ -288,9 +296,10 @@ function WorkSheet({ title, text }) {
           <li
             className='workSheet__item workSheet__title'
             key={item.id}
+            onClick={() => nav(item)}
           >
             <Link
-              to={"/"}
+              to={"/filter/step/one"}
               className='workSheet__link workSheet__link-black'
             >
               {item.title}
@@ -299,11 +308,18 @@ function WorkSheet({ title, text }) {
               {item.number}
             </span>
           </li>
-          {item.name.map((item) => (
-            <li className='workSheet__item' key={item.id}>
-              <a href='/' className='workSheet__link'>
-                {item.repetitors}
-              </a>
+          {item.name.map((link) => (
+            <li
+              className='workSheet__item'
+              onClick={() => nav(item)}
+              key={link.id}
+            >
+              <Link
+                to={"/filter/step/one"}
+                className='workSheet__link'
+              >
+                {link.repetitors}
+              </Link>
             </li>
           ))}
         </ul>

@@ -6,16 +6,17 @@ import Phoneverification from "../../assets/img/iconProfile/checkPhone.png";
 import Turkey from "../../assets/img/turkey.png";
 import Google from "../../assets/img/iconProfile/social/google.png";
 import { useDispatch, useSelector } from "react-redux";
-
+import "react-phone-input-2/lib/style.css";
 import { Element } from "react-scroll";
 
 import { AsideNavProfile } from "./AsideNavProfile";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "react-phone-input-2";
 import { Footer } from "../../component/Footer/Footer";
 import Header from "../../component/Header/Header";
 import { Link } from "react-router-dom";
 import { Path } from "../../path";
 import { Layout } from "../../layout/Layout";
+import ScrollToTop from "../../service/scrollTop";
 
 export const ProfilePage = () => {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -31,7 +32,6 @@ export const ProfilePage = () => {
     setInputValue(e.target.value);
   };
   const data = useSelector((store) => store.user.data);
-
 
   const [telephone, setTelephone] = useState("");
   const [name, setName] = useState("");
@@ -49,6 +49,7 @@ export const ProfilePage = () => {
   const logout = () => {
     localStorage.removeItem("token");
   };
+  ScrollToTop();
   return (
     <Layout>
       <div className='conteiner__time'>
@@ -150,12 +151,13 @@ export const ProfilePage = () => {
                     </div>
                     {/* phone */}
                     <PhoneInput
-                      defaultCountry='TR'
-                      international
-                      withCountryCallingCode
-                      className='registration__inp'
+                      country={"tr"}
                       value={telephone}
                       onChange={setTelephone}
+                      className='phone-input input-phone'
+                      inputProps={{
+                        minLength: 10,
+                      }}
                     />
                     <label htmlFor='Phone' type='text'>
                       Cпециалисты видят ваш номер. Вы

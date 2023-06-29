@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import {  animated } from 'react-spring';
 
-import '../../scss/components/SpecialistRegion.scss';
+
 
 import WorkSheet from '../Region/Worksheet';
 import Counter from './count';

@@ -11,7 +11,8 @@ import Belarus from "../../assets/img/belarus.png";
 import Logo from "../../assets/img/МАСТЕРАА.svg";
 
 import Arrow from "../../assets/img/Arrow-down.svg";
-
+import { Link } from "react-router-dom";
+import { Path } from "../../path";
 export const Footer = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,21 +28,21 @@ export const Footer = () => {
       <div className="footer__block">
         <ul className="footer__list">
           <li className="footer__link footer__title">Новый заказ</li>
-          <li className="footer__link">Все услуги</li>
-          <li className="footer__link">Все отзывы</li>
-          <li className="footer__link">История заказов</li>
-          <li className="footer__link">Условия использования</li>
-          <li className="footer__link">Каталог ссылок</li>
+          <Link to={Path.notfound} className="footer__link">Все услуги</Link>
+          <Link to={Path.notfound} className="footer__link">Все отзывы</Link>
+          <Link to={Path.notfound} className="footer__link">История заказов</Link>
+          <Link to={Path.notfound} className="footer__link">Условия использования</Link>
+          <Link to={Path.notfound} className="footer__link">Каталог ссылок</Link>
         </ul>
         <ul className="footer__list">
           <li className="footer__link footer__title">Работа в Стамбуле</li>
-          <li className="footer__link">Вход для специалистов</li>
-          <li className="footer__link">Партнёрская программа</li>
+          <Link to={Path.notfound} className="footer__link">Вход для специалистов</Link>
+          <Link to={Path.notfound} className="footer__link">Партнёрская программа</Link>
         </ul>
         <ul className="footer__list">
           <li className="footer__link footer__title">О компании</li>
-          <li className="footer__link">Вход для специалистов</li>
-          <li className="footer__link">Вакансии</li>
+          <Link to={Path.notfound} className="footer__link">Вход для специалистов</Link>
+          <Link to={Path.notfound} className="footer__link">Вакансии</Link>
         </ul>
         <ul className="footer__list">
           <li className="footer__link footer__title">Режим работы</li>

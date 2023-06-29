@@ -5,6 +5,12 @@
   justify-content: space-between;
   background-color: #ecf3ff;
   margin-bottom: 8rem;
+
+  @include breakpoint($laptop) {
+  padding: 4rem 12rem 4rem 12rem;
+
+  }
+
   &__block {
     width: 100%;
   }

@@ -5,14 +5,15 @@ import Plus from "../../assets/img/plus.png";
 import Eyes from "../../assets/img/eyes.svg";
 import { Hint } from "../../component/MainBlock/Hint";
 import Btn from "../../component/Btn/Btn";
-import { Footer } from "../../component/Footer/Footer";
-import Header from "../../component/Header/Header";
+import Input from "../../component/input/Input";
 import { useNavigate } from "react-router-dom";
 import { Path } from "../../path";
-import { useEffect } from "react";
+
 import { useDispatch, useSelector } from "react-redux";
 import Google from "../../assets/img/google.svg";
 import { Layout } from "../../layout/Layout";
+import { fetchCategories } from "../../redux/features/orderSlice";
+import ScrollToTop from "../../service/scrollTop";
 
 function ActiveOrdersAll() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -32,12 +33,13 @@ function ActiveOrdersAll() {
 
   const handleBlockClick = (content) => {
     setInputValue(content);
+    dispatch(fetchCategories(content));
     setTimeout(() => {
       // Перенаправление пользователя через React Router
       navigate(Path.filterStepOne);
     }, 1000);
   };
-
+  ScrollToTop();
   return (
     <Layout>
       <section className='createOrder'>
@@ -102,11 +104,9 @@ function ActiveOrdersAll() {
                 {isOpen && (
                   <div className='createOrder-menu-list'>
                     <div className='mainsearch'>
-                      <input
-                        className='search__input input_search'
-                        type='text'
+                      <Input
+                        inputValue={inputValue}
                         value={inputValue}
-                        placeholder='Услуга или специалист'
                         onChange={(e) =>
                           setInputValue(e.target.value)
                         }
@@ -115,23 +115,23 @@ function ActiveOrdersAll() {
                     </div>
                     <div className='mainhint'>
                       <Hint
-                        content='Программист'
-                        onClick={() =>
-                          handleBlockClick("Программист")
-                        }
-                      />
-                      <Hint
-                        content='Копирайтер'
-                        onClick={() =>
-                          handleBlockClick("Копирайтер")
-                        }
-                      />
-                      <Hint
-                        content='Английский язык'
+                        content='Мастера по ремонту'
                         onClick={() =>
                           handleBlockClick(
-                            "Английский язык",
+                            "Мастера по ремонту",
                           )
+                        }
+                      />
+                      <Hint
+                        content='Репетиторы'
+                        onClick={() =>
+                          handleBlockClick("Репетиторы")
+                        }
+                      />
+                      <Hint
+                        content='Фрилансеры'
+                        onClick={() =>
+                          handleBlockClick("Фрилансеры")
                         }
                       />
                     </div>
@@ -149,6 +149,12 @@ function ActiveOrdersAll() {
                     <p className='createOrder__item-name'>
                       {item.title}
                     </p>
+                    <p className='createOrder__item-option'>
+                      {item.selectedOption}
+                    </p>
+                    <p className='createOrder__item-option'>
+                      {item.option}
+                    </p>
                     <div className='createOrder__item-subtitle'>
                       Заказ открыт для откликов
                       <div className='createOrder__item-visiting'>
@@ -162,7 +168,15 @@ function ActiveOrdersAll() {
                         </p>
                       </div>
                     </div>
+                    <div>
+                      <p className='price'>
+                        {item.minPrice && item.maxPrice
+                          ? `${item.minPrice}лир - ${item.maxPrice}лир`
+                          : null}
+                      </p>
+                    </div>
                   </div>
+                  <div className='status'>Активен </div>
                 </article>
               ))}
             <div className='createOrder__item-data'></div>

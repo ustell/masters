@@ -2,7 +2,7 @@
 
 import React, { useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
-import "../../scss/components/SpecialistPrice.scss";
+
 
 function SpecialistPriceBlock() {
   const controlsLeft = useAnimation();

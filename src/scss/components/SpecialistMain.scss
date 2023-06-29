@@ -6,12 +6,25 @@
   gap: 7rem;
   justify-content: space-between;
   align-items: center;
+
+  @include breakpoint($laptop) {
+  padding: 0rem 12rem 0 12rem;
+  gap: 5rem;
+
+  }
   // left side
   &__title {
     font-weight: 600;
     font-size: 72px;
     line-height: 80px;
     letter-spacing: 2px;
+
+    @include breakpoint($laptop) {
+      font-weight: 600;
+      font-size: 62px;
+      line-height: 60px;
+      letter-spacing: 2px;
+    }
     span {
       display: block;
     }
@@ -22,6 +35,11 @@
     line-height: 30px;
     color: #a8a8a8;
     padding-top: 2rem;
+
+    @include breakpoint($laptop) {
+      font-size: 21px;
+      line-height: 25px;
+    }
   }
 
   .SpecialistMain__content {
@@ -36,4 +54,18 @@
 
 .SpecialistMain__subtitle {
   margin-bottom: 2rem;
+}
+
+.SpecialistMain__phone {
+  width: 100%;
+  height: 0 auto;
+}
+
+.SpecialistMain__img {
+  width: 100%;
+  min-width: 45rem;
+  height: 0 auto;
+  object-fit: cover;
+  background-image: cover;
+  background-size: cover;
 }

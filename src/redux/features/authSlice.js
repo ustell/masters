@@ -50,7 +50,14 @@ export const fetchUpdatedUserName = createAsyncThunk(
 );
 export const fetchUpdatedUser = createAsyncThunk(
   "user/fetchUpdatedUser",
-  async ({ telephone, title }) => {
+  async ({
+    telephone,
+    title,
+    minPrice,
+    maxPrice,
+    selectedOption,
+    option,
+  }) => {
     try {
       const response = await axios.get(
         `https://648840560e2469c038fd560a.mockapi.io/DataCategory/?telephone=${telephone}`,
@@ -64,7 +71,10 @@ export const fetchUpdatedUser = createAsyncThunk(
           ...userData.orders,
           {
             title,
-            date: "Сегодня",
+            minPrice,
+            maxPrice,
+            selectedOption,
+            option,
           },
         ],
       };

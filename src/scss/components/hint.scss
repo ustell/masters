@@ -1,14 +1,13 @@
-.orderFilling__hint-content:not(:last-child) {
-  margin-right: 15px;
-}
 
 .orderFilling__hint-content {
 
   cursor: pointer;
-  margin-top: 5px;
+  margin-top: 2rem;
+
   background: #f5f5f5;
   border-radius: 5px;
   padding: 1rem;
+ 
 
   transition: background .1s ease-in;
 

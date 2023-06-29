@@ -16,6 +16,9 @@ import MastersThree from "../../assets/img/masters-three.png";
 import MastersFour from "../../assets/img/masters-four.png";
 
 import { AsideNav } from "../FilterPages/AsideNav";
+import { Layout } from "../../layout/Layout";
+import { useNavigate } from "react-router";
+import { Path } from "../../path";
 
 function Specialists({ comments, rating }) {
   const [cities, setCities] = React.useState([]);
@@ -26,6 +29,8 @@ function Specialists({ comments, rating }) {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const navigate = useNavigate();
 
   const [data, setData] = useState([
     {
@@ -54,8 +59,8 @@ function Specialists({ comments, rating }) {
     {
       comments: 92,
       rating: 3,
-      avatar: MastersTwo,
-      name: "Иорь Невзоров",
+      avatar: MastersFour,
+      name: "Игорь Невзоров",
       time: "10:30",
       description:
         "«Крэйзи студио» — сообщество профессионалов, объединившись под общим брендом, мы предлагаем услуги по разработке, созданию, поддержке и продвижению интернет-сайтов. Благодаря наличию богатого опыта работы и использованию современных инструментов в области сайтостроения, мы готовы предложить лучшие решения, связанные с созданием интернет-сайтов для бизнеса.",
@@ -100,7 +105,7 @@ function Specialists({ comments, rating }) {
     {
       comments: 59,
       rating: 5,
-      avatar: MastersFour,
+      avatar: MastersTwo,
       name: "Дарья Тапкина",
       time: "10:30",
       description:
@@ -121,6 +126,7 @@ function Specialists({ comments, rating }) {
       id: "4",
     },
   ]);
+  
 
   const handleSortChange = (value, sortBy) => {
     const sortedData = [...data];
@@ -135,91 +141,100 @@ function Specialists({ comments, rating }) {
 
     setData(sortedData);
   };
+  
 
   return (
-    <div className='conteiner__time'>
-      <AsideNav />
-      <section className='main__aside'>
-        <div className='specialists'>
-          <div className='specialists__details'>
-            <div className='specialists__details-title'>
-              Чтобы писать специалистам, заполните детали
-              заказа
+    <Layout>
+      {" "}
+      <div className='conteiner__time'>
+        <AsideNav />
+        <section className='main__aside'>
+          <div className='specialists'>
+            <div className='specialists__details'>
+              <div className='specialists__details-title'>
+                Чтобы писать специалистам, заполните детали
+                заказа
+              </div>
+              <button
+                onClick={() => navigate(Path.filterStepOne)}
+                className='specialists__details-btn'
+              >
+                Заполнить детали заказа
+              </button>
             </div>
-            <button className='specialists__details-btn'>
-              Заполнить детали заказа
-            </button>
-          </div>
 
-          <div className='specialists__sort'>
-            <h3 className='specialists__sort-title'>
-              Сортировка:
-            </h3>
-            <button
-              className='specialists__sort-btn'
-              onClick={toggleDropdown}
-            >
-              <p>
-                {sortBy === "comments"
-                  ? "Отзывам"
-                  : sortBy === "rating"
-                  ? "Рейтингу"
-                  : "Подходящие"}
-              </p>
-              <img
-                className={`specialists__sort-icon ${
-                  isDropdownOpen ? "rotate" : ""
-                }`}
-                src={ArrowDown}
-                alt='ArrowDown'
+            <div className='specialists__sort'>
+              <h3 className='specialists__sort-title'>
+                Сортировка:
+              </h3>
+              <button
+                className='specialists__sort-btn'
+                onClick={toggleDropdown}
+              >
+                <p>
+                  {sortBy === "comments"
+                    ? "Отзывам"
+                    : sortBy === "rating"
+                    ? "Рейтингу"
+                    : "Подходящие"}
+                </p>
+                <img
+                  className={`specialists__sort-icon ${
+                    isDropdownOpen ? "rotate" : ""
+                  }`}
+                  src={ArrowDown}
+                  alt='ArrowDown'
+                />
+              </button>
+              {isDropdownOpen && (
+                <ul className='specialists__sort-list'>
+                  <li
+                    onClick={() =>
+                      handleSortChange("comments")
+                    }
+                  >
+                    Отзывам
+                  </li>
+                  <li
+                    onClick={() =>
+                      handleSortChange("rating")
+                    }
+                  >
+                    Рейтингу
+                  </li>
+                </ul>
+              )}
+            </div>
+            {data.map((data) => (
+              <Specialist
+                key={data.id}
+                comments={data.comments}
+                rating={data.rating}
+                name={data.name}
+                time={data.time}
+                description={data.description}
+                university={data.university}
+                Fact={data.Fact}
+                recommendation={data.recommendation}
+                reviews={data.reviews}
+                servicesone={data.servicesone}
+                priceone={data.priceone}
+                servicestwo={data.servicestwo}
+                pricetwo={data.pricetwo}
+                servicesthree={data.servicesthree}
+                pricethree={data.pricethree}
+                allservis={data.allservis}
+                avatar={data.avatar}
               />
-            </button>
-            {isDropdownOpen && (
-              <ul className='specialists__sort-list'>
-                <li
-                  onClick={() =>
-                    handleSortChange("comments")
-                  }
-                >
-                  Отзывам
-                </li>
-                <li
-                  onClick={() => handleSortChange("rating")}
-                >
-                  Рейтингу
-                </li>
-              </ul>
-            )}
-          </div>
-          {data.map((data) => (
-            <Specialist
-              key={data.id}
-              comments={data.comments}
-              rating={data.rating}
-              name={data.name}
-              time={data.time}
-              description={data.description}
-              university={data.university}
-              Fact={data.Fact}
-              recommendation={data.recommendation}
-              reviews={data.reviews}
-              servicesone={data.servicesone}
-              priceone={data.priceone}
-              servicestwo={data.servicestwo}
-              pricetwo={data.pricetwo}
-              servicesthree={data.servicesthree}
-              pricethree={data.pricethree}
-              allservis={data.allservis}
-              avatar={data.avatar}
-            />
-          ))}
+            ))}
 
-          <button className='specialists__prew dissable'>
-            Показать еще 20
-          </button>
-        </div>
-      </section>
-    </div>
+            <button className='specialists__prew dissable'>
+              Показать еще 20
+            </button>
+          </div>
+        </section>
+      </div>
+    </Layout>
   );
 }
 

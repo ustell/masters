@@ -1,68 +1,73 @@
 .orderFilling {
-    color: #000000;
+  color: #000000;
+  display: flex;
+
+  justify-content: center;
+  &__content{
+    margin-left: 130px;
+    max-width: 59rem;
+  margin-top: 40px;
+  }
+  &__title {
+    padding-bottom: 4rem;
+
+    &-title {
+      font-weight: 500;
+      font-size: 3.6rem;
+      line-height: 3rem;
+    }
+    &-subtitle {
+      padding-top: 2rem;
+      font-size: 15px;
+      line-height: 20px;
+    }
+  }
+  &__form {
+    margin-bottom: 2rem;
+    // max-width: 68.2rem;
+    padding: 0;
+  }
+  &__example {
+    border-top: 1px solid #dcdcdc;
+    max-width: 64rem
+  }
+  &__subtitle {
+    margin-top: 2rem;
+  }
+  .hunts {
     display: flex;
-    justify-content: center;
-    &__content{
-      margin-left: 130px;
-    margin-top: 40px;
+
+    flex-shrink: 0  ;
+    flex-wrap: wrap;
+    gap: 0 2rem;
+  }
+  &__step {
+    display: flex;
+    // width: 100%;
+    margin-top: 3rem;
+    &-prev {
+      background: #f7f7f7;
+      border-radius: 0.5rem;
+      margin-right: 3rem;
     }
-    &__title {
-      padding-bottom: 4rem;
-  
-      &-title {
-        font-weight: 500;
-        font-size: 3.6rem;
-        line-height: 3rem;
-      }
-      &-subtitle {
-        padding-top: 2rem;
-        font-size: 15px;
-        line-height: 20px;
-      }
-    }
-    &__form {
-      margin-bottom: 2rem;
-      // max-width: 68.2rem;
-      padding: 0;
-    }
-    &__example {
-      border-top: 1px solid #dcdcdc;
-      max-width: 64rem
-    }
-    &__subtitle {
-      padding: 2rem 0;
-    }
-    .hunts {
+    &-next {
+      background: #333333;
+      border-radius: 0.5rem;
       display: flex;
-      flex-wrap: wrap;
+      color: #fff;
+      width: 100%;
+      justify-content: center;
     }
-    &__step {
-      display: flex;
-      // width: 100%;
-      margin-top: 3rem;
-      &-prev {
-        background: #f7f7f7;
-        border-radius: 0.5rem;
-        margin-right: 3rem;
-      }
-      &-next {
-        background: #333333;
-        border-radius: 0.5rem;
-        display: flex;
-        color: #fff;
-        width: 100%;
-        justify-content: center;
-      }
-      &-title {
-        margin-right: 1rem;
-      }
-    }
-    &__btn {
-      padding: 2.2rem 2rem;
+    &-title {
+      margin-right: 1rem;
     }
   }
-  .error{
-    color: red;
-    margin-top: 10px;
-    margin-left: 2px;
+  &__btn {
+    padding: 2.2rem 2rem;
   }
+}
+.error{
+  color: red;
+  margin-top: 10px;
+  margin-left: 2px;
+}

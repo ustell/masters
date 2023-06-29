@@ -59,10 +59,6 @@ function App() {
       element: <FAQ />,
     },
     {
-      path: Path.FAQ,
-      element: <FAQ />,
-    },
-    {
       path: Path.myOrder,
       element: <ActiveOrdersAll />,
     },
@@ -89,10 +85,7 @@ function App() {
   ]);
   return (
     <div className='App'>
-      <RouterProvider router={router}>
-        <Header />
-        <Footer />
-      </RouterProvider>
+      <RouterProvider router={router} />
     </div>
   );
 }

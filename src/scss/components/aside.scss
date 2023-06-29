@@ -1,5 +1,10 @@
 .conteiner__time {
-  padding: 6rem 16rem;
+  padding: 6rem  16rem;
+  padding-bottom: 12rem;
+
+  @include breakpoint($laptop) {
+    padding: 6rem 12rem;
+  }
 }
 
 .aside {
@@ -11,6 +16,10 @@
   top: 10rem;
   left: 16rem;
   z-index: $z-index__aside;
+
+  @include breakpoint($laptop) {
+    left: 12rem;
+  }
 
 }
 
