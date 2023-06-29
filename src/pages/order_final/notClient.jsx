@@ -6,11 +6,10 @@ import { Link } from "react-router-dom";
 import { Path } from "../../path";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-
-import PhoneInput from "react-phone-number-input";
+import PhoneInput from "react-phone-input-2";
 import Google from "../../assets/img/google.svg";
 import "./style.scss";
-import "react-phone-number-input/style.css";
+import "react-phone-input-2/lib/style.css";
 import { useNavigate } from "react-router-dom";
 import { registerUser } from "../../redux/features/authSlice";
 
@@ -49,6 +48,7 @@ export const NotClient = () => {
   const dispatch = useDispatch();
   const [verificate, setVerificate] = useState("");
   const [open, setOpen] = useState(true);
+  const [error, setError] = useState(false);
 
   const toggleMenu = () => {
     setOpen(!open);
@@ -56,7 +56,13 @@ export const NotClient = () => {
 
   const registrationTelephone = async (e) => {
     e.preventDefault();
-    toggleMenu();
+    if (telephone.length < 10) {
+      setError(true);
+    } else {
+      toggleMenu();
+      setError(false);
+    }
+
     // логика для обработки регистрации пользователя
   };
   const navigate = useNavigate();
@@ -79,7 +85,6 @@ export const NotClient = () => {
     window.location.reload();
     try {
     } catch (error) {
-
       alert("не зарегестрировались");
     }
 
@@ -104,13 +109,19 @@ export const NotClient = () => {
               >
                 <div className='registration__group'>
                   <PhoneInput
-                    defaultCountry='TR'
-                    international
-                    withCountryCallingCode
-                    className='registration__inp'
+                    country={"tr"}
                     value={telephone}
                     onChange={setTelephone}
+                    className='phone-input'
+                    inputProps={{
+                      minLength: 10,
+                    }}
                   />
+                  {error && (
+                    <p className='error'>
+                      введите номер полностью
+                    </p>
+                  )}
                 </div>
                 <div className='registration__group'>
                   <p className='registration__subtitle'>
