@@ -3,7 +3,7 @@
 export const City = [
   {
     id: 1,
-    name: "Стамбул",
+    name: "Стамбулs",
   },
   {
     id: 2,
@@ -41,7 +41,4 @@ export const City = [
     id: 10,
     name: "Мерсин",
   },
-
 ];
-
-
