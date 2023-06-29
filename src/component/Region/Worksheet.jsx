@@ -1,298 +1,307 @@
 /** @format */
 
 import React from "react";
+import { Link } from "react-router-dom";
 
 const specialist = [
   {
-    title: 'Репетиторы',
+    title: "Репетиторы",
 
     name: [
       {
         id: 1,
-        repetitors: 'Анлийский язык',
+        repetitors: "Анлийский язык",
       },
       {
         id: 2,
-        repetitors: 'Математика',
+        repetitors: "Математика",
       },
       {
         id: 3,
-        repetitors: 'Русский язык',
+        repetitors: "Русский язык",
       },
       {
         id: 4,
-        repetitors: 'Начальная школа',
+        repetitors: "Начальная школа",
       },
       {
         id: 5,
-        repetitors: 'Музыка',
+        repetitors: "Музыка",
       },
     ],
-    number: '247',
+    number: "247",
     id: 2,
   },
 
   {
-    title: 'Мастера по ремонту',
+    title: "Мастера по ремонту",
     name: [
       {
         id: 1,
-        repetitors: 'Сантехники',
+        repetitors: "Сантехники",
       },
       {
         id: 2,
-        repetitors: 'Электрики',
+        repetitors: "Электрики",
       },
       {
         id: 3,
-        repetitors: 'Плиточники',
+        repetitors: "Плиточники",
       },
       {
         id: 4,
-        repetitors: 'Штукатуры',
+        repetitors: "Штукатуры",
       },
       {
         id: 5,
-        repetitors: 'Стяжка пола',
+        repetitors: "Стяжка пола",
       },
     ],
-    number: '843',
+    number: "843",
     id: 2,
   },
 
   {
-    title: 'Мастера красоты',
+    title: "Мастера красоты",
     name: [
       {
         id: 1,
-        repetitors: 'Макияж',
+        repetitors: "Макияж",
       },
       {
         id: 2,
-        repetitors: 'Стилисты',
+        repetitors: "Стилисты",
       },
       {
         id: 3,
-        repetitors: 'Фотограф',
+        repetitors: "Фотограф",
       },
       {
         id: 4,
-        repetitors: 'Бьюти-такси',
+        repetitors: "Бьюти-такси",
       },
       {
         id: 5,
-        repetitors: 'Диетология',
+        repetitors: "Диетология",
       },
     ],
-    number: '923',
+    number: "923",
     id: 2,
   },
   {
-    title: 'Фрилансеры',
+    title: "Фрилансеры",
     name: [
       {
         id: 1,
-        repetitors: 'Дизайнеры',
+        repetitors: "Дизайнеры",
       },
       {
         id: 2,
-        repetitors: 'Программисты',
+        repetitors: "Программисты",
       },
       {
         id: 3,
-        repetitors: 'Верстальщики',
+        repetitors: "Верстальщики",
       },
       {
         id: 4,
-        repetitors: 'Переводчики',
+        repetitors: "Переводчики",
       },
       {
         id: 5,
-        repetitors: 'Системные администраторы',
+        repetitors: "Системные администраторы",
       },
     ],
-    number: '459',
+    number: "459",
     id: 2,
   },
   {
-    title: 'Бухгалтеры и юристы',
+    title: "Бухгалтеры и юристы",
     name: [
       {
         id: 1,
-        repetitors: 'Бухгалтеры',
+        repetitors: "Бухгалтеры",
       },
       {
         id: 2,
-        repetitors: 'Юристы',
+        repetitors: "Юристы",
       },
       {
         id: 3,
-        repetitors: 'Экономика',
+        repetitors: "Экономика",
       },
       {
         id: 4,
-        repetitors: 'Право',
+        repetitors: "Право",
       },
       {
         id: 5,
-        repetitors: 'Финансы',
+        repetitors: "Финансы",
       },
     ],
-    number: '348',
+    number: "348",
     id: 2,
   },
   {
-    title: 'Спортивные тренеры',
+    title: "Спортивные тренеры",
     name: [
       {
         id: 1,
-        repetitors: 'Фитнес',
+        repetitors: "Фитнес",
       },
       {
         id: 2,
-        repetitors: 'Йога',
+        repetitors: "Йога",
       },
       {
         id: 3,
-        repetitors: 'Пилатес',
+        repetitors: "Пилатес",
       },
       {
         id: 4,
-        repetitors: 'Стретчинг',
+        repetitors: "Стретчинг",
       },
       {
         id: 5,
-        repetitors: 'Единоборства',
+        repetitors: "Единоборства",
       },
     ],
-    number: '395',
+    number: "395",
     id: 2,
   },
   {
-    title: 'Артисты',
+    title: "Артисты",
     name: [
       {
         id: 1,
-        repetitors: 'Певцы',
+        repetitors: "Певцы",
       },
       {
         id: 2,
-        repetitors: 'Шаржисты',
+        repetitors: "Шаржисты",
       },
       {
         id: 3,
-        repetitors: 'Художники',
+        repetitors: "Художники",
       },
       {
         id: 4,
-        repetitors: 'Праздник для малышей',
+        repetitors: "Праздник для малышей",
       },
       {
         id: 5,
-        repetitors: 'Мальчишник/девичник',
+        repetitors: "Мальчишник/девичник",
       },
     ],
-    number: '381',
+    number: "381",
     id: 2,
   },
   {
-    title: 'Домашний персонал',
+    title: "Домашний персонал",
     name: [
       {
         id: 1,
-        repetitors: 'Водители',
+        repetitors: "Водители",
       },
       {
         id: 2,
-        repetitors: 'Домработницы',
+        repetitors: "Домработницы",
       },
       {
         id: 3,
-        repetitors: 'Повара',
+        repetitors: "Повара",
       },
       {
         id: 4,
-        repetitors: 'Сиделки',
+        repetitors: "Сиделки",
       },
       {
         id: 5,
-        repetitors: 'Выгул собак',
+        repetitors: "Выгул собак",
       },
     ],
-    number: '742',
+    number: "742",
     id: 2,
   },
   {
-    title: 'Ветеринары',
+    title: "Ветеринары",
     name: [
       {
         id: 1,
-        repetitors: 'Ветеринарная терапия',
+        repetitors: "Ветеринарная терапия",
       },
       {
         id: 2,
-        repetitors: 'Лечение кошек',
+        repetitors: "Лечение кошек",
       },
       {
         id: 3,
-        repetitors: 'Лечение собак',
+        repetitors: "Лечение собак",
       },
       {
         id: 4,
-        repetitors: 'Кинология',
+        repetitors: "Кинология",
       },
       {
         id: 5,
-        repetitors: 'Дрессировка животных',
+        repetitors: "Дрессировка животных",
       },
     ],
-    number: '632',
+    number: "632",
     id: 2,
   },
   {
-    title: 'Ищете кого-то ещё?',
+    title: "Ищете кого-то ещё?",
     name: [
       {
         id: 1,
-        repetitors: 'Собеседник на час',
+        repetitors: "Собеседник на час",
       },
       {
         id: 2,
-        repetitors: 'Психологи',
+        repetitors: "Психологи",
       },
       {
         id: 3,
-        repetitors: 'Экологи',
+        repetitors: "Экологи",
       },
       {
         id: 4,
-        repetitors: 'Интервьюеры',
+        repetitors: "Интервьюеры",
       },
       {
         id: 5,
-        repetitors: 'Детективы',
+        repetitors: "Детективы",
       },
     ],
-    number: '63',
+    number: "63",
     id: 2,
   },
 ];
 
 function WorkSheet({ title, text }) {
   return (
-    <div className="workSheet">
+    <div className='workSheet'>
       {/* block */}
       {specialist.map((item) => (
-        <ul className="workSheet__block">
-          <li className="workSheet__item workSheet__title" key={item.id}>
-            <a href="/" className="workSheet__link workSheet__link-black">
+        <ul className='workSheet__block'>
+          <li
+            className='workSheet__item workSheet__title'
+            key={item.id}
+          >
+            <Link
+              to={"/"}
+              className='workSheet__link workSheet__link-black'
+            >
               {item.title}
-            </a>
-            <span className="workSheet__count">{item.number}</span>
+            </Link>
+            <span className='workSheet__count'>
+              {item.number}
+            </span>
           </li>
           {item.name.map((item) => (
-            <li className="workSheet__item" key={item.id}>
-              <a href="/" className="workSheet__link">
+            <li className='workSheet__item' key={item.id}>
+              <a href='/' className='workSheet__link'>
                 {item.repetitors}
               </a>
             </li>

@@ -12,7 +12,7 @@ export const DropDownProfile = ({ Fio, profileWord }) => {
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("telephone");
   };
 
   const profile =

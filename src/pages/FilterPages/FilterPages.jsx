@@ -22,9 +22,6 @@ import { Layout } from "../../layout/Layout";
 
 export const FilterPages = () => {
   const navigate = useNavigate();
-  const userName = useSelector(
-    (state) => state.order?.userName?.data?.options,
-  );
 
   const nextStep = () => {
     const data = {
@@ -38,8 +35,6 @@ export const FilterPages = () => {
       textValue,
       file,
     };
-    console.log(data);
-    localStorage.setItem("order", JSON.stringify(data));
 
     navigate(Path.finalStep);
   };
@@ -47,13 +42,16 @@ export const FilterPages = () => {
     navigate(Path.filterStepOne);
   };
 
+  const response = localStorage.getItem("order");
+  const parsedData = JSON.parse(response);
+  const first = parsedData[0].categoryRepetitors;
+  const two = parsedData[0].serviceRepetitors;
+
   let array1 = { answer: [] };
   let array2 = { answer: [] };
 
-  if (Array.isArray(userName) && userName.length >= 2) {
-    [array1, array2] = userName;
-  }
-
+  array1.answer.push(...first);
+  array2.answer.push(...two);
   // file date
   const [file, setFile] = useState();
 
@@ -188,10 +186,10 @@ export const FilterPages = () => {
                   </label>
                   <div className={`filter__options`}>
                     {/* options */}
-                    {array1.answer.map((item) => (
+                    {array1.answer.map((item, index) => (
                       <label
                         className='filter__option__label'
-                        key={item.length}
+                        key={index + Date.now()}
                       >
                         <input
                           className='filter__option'
@@ -234,15 +232,15 @@ export const FilterPages = () => {
                   </label>
                   <div className={`filter__options`}>
                     {/* options */}
-                    {array2.answer.map((item) => (
+                    {array2.answer.map((item, index) => (
                       <label
                         className='filter__option__label'
-                        key={item}
+                        key={index + Date.now()}
                       >
                         <input
                           className='filter__option'
                           type='checkbox'
-                          id={item}
+                          id={item?.name}
                           checked={selectedOption2 === item}
                           onChange={() =>
                             handleCheckboxChange2(item)

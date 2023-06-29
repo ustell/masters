@@ -6,7 +6,10 @@ import "./style.scss";
 
 import { Hint } from "../../component/MainBlock/Hint";
 import Input from "../../component/input/Input";
-import { useDispatch } from "react-redux";
+import { Footer } from "../../component/Footer/Footer";
+import Header from "../../component/Header/Header";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchOrder } from "../../redux/features/orderSlice";
 import { useNavigate } from "react-router";
 import { Path } from "../../path";
 import arrowBlack from "../../assets/img/iconFilter/arrowBlack.png";
@@ -22,20 +25,32 @@ function OrderFilling() {
   const dispatch = useDispatch();
   const handleBlockClick = (content) => {
     setInputValue(content);
-    localStorage.setItem("title", content);
-    dispatch();
+
+    const selectedCategory = categories.find(
+      (item) => item.title === content,
+    );
+
+
+    localStorage.setItem(
+      "order",
+      JSON.stringify(selectedCategory.name[0].repetitors),
+    );
     setError(false);
     setTimeout(() => {
       navigate(Path.aside);
     }, 1000);
   };
+  const response = useSelector(
+    (state) => state.order?.categories,
+  );
+  const categories = response[0]?.categories;
 
   const nextStep = () => {
     if (inputValue === "") {
       setError(true);
     } else {
       setError(false);
-      navigate(Path.aside);
+      // navigate(Path.aside);
     }
   };
   return (
@@ -53,6 +68,9 @@ function OrderFilling() {
               <form className='orderFilling__form'>
                 <Input
                   style='search__input create-inp'
+                  inputValue={inputValue}
+                  responseValue={""}
+                  secondInput={" "}
                   value={inputValue}
                   onChange={(e) =>
                     setInputValue(e.target.value)
@@ -69,32 +87,15 @@ function OrderFilling() {
                   Например:
                 </p>
                 <div className='hunts'>
-                  <Hint
-                    content='Программист'
-                    onClick={() =>
-                      handleBlockClick("Программист")
-                    }
-                  />
-                  <Hint
-                    content='Копирайтер'
-                    onClick={() =>
-                      handleBlockClick("Копирайтер")
-                    }
-                  />
-                  <Hint
-                    content='Английский язык по скайпу'
-                    onClick={() =>
-                      handleBlockClick(
-                        "Английский язык по скайпу",
-                      )
-                    }
-                  />
-                  <Hint
-                    content='Дизайнер'
-                    onClick={() =>
-                      handleBlockClick("Дизайнер")
-                    }
-                  />
+                  {categories?.map((item, index) => (
+                    <Hint
+                      key={index}
+                      content={item.title}
+                      onClick={() =>
+                        handleBlockClick(item.title)
+                      }
+                    />
+                  ))}
                 </div>
               </div>
               <div className='filter__Goback'>

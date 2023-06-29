@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import DropdownMenu from "./DropDown";
 import { DropDownProfile } from "./DropDownProfile";
 import { DropdownSpecialist } from "./DropdownSpecialist";
@@ -8,19 +8,17 @@ import { DropdownSpecialistProfile } from "./DropdownSpecialistProfile";
 import Logo from "../../assets/img/МАСТЕРА.svg";
 import { Link } from "react-router-dom";
 import { Path } from "../../path";
-
-
+import { useDispatch } from "react-redux";
+import { fetchUpdatedUserName } from "../../redux/features/authSlice";
+import axios from "axios";
+import { fetchCategories } from "../../redux/features/orderSlice";
 
 function Header() {
-
-
   const [useUser, setUseUser] = React.useState(true);
   const [useFio, setUseFio] = React.useState(
     "Александр Курчаков",
   );
-
-
-
+  const dispatch = useDispatch();
   const cities = [
     {
       id: 1,
@@ -60,6 +58,26 @@ function Header() {
     },
   ];
 
+  useEffect(() => {
+    const telephone = localStorage.getItem("telephone");
+    if (telephone) {
+      dispatch(fetchUpdatedUserName(telephone))
+        .then((action) => {
+          const updatedUserName = action.payload.name; // Access the 'name' property from the payload object
+
+          setUseFio(updatedUserName);
+          setUseUser(false);
+        })
+        .catch((error) => {
+          console.error(
+            "Error fetching updated user name:",
+            error,
+          );
+        });
+    }
+    
+  }, [dispatch]);
+
   return (
     <header className='header'>
       <nav className='header__menu'>
@@ -70,7 +88,10 @@ function Header() {
             </Link>
           </li>
           <li>
-            <DropdownMenu text={"Анталия"} cities={cities}/>
+            <DropdownMenu
+              text={"Анталия"}
+              cities={cities}
+            />
           </li>
         </ul>
         {useUser ? (

@@ -6,10 +6,11 @@ import { Path } from "../../path";
 import arrowBlack from "../../assets/img/iconFilter/arrowBlack.png";
 import arrowWhite from "../../assets/img/iconFilter/arrow.png";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Layout } from "../../layout/Layout";
 
 import "./style.scss";
+import { fetchUpdatedUser } from "../../redux/features/authSlice";
 
 function OrderProfile({ userName, userID }) {
   const navigate = useNavigate();
@@ -20,20 +21,24 @@ function OrderProfile({ userName, userID }) {
       ? userName.charAt(0).toUpperCase()
       : "";
   const logout = () => {
-    localStorage.removeItem("token");
+    localStorage.removeItem("telephone");
     window.location.reload();
   };
 
   const data = localStorage.getItem("order");
-
-  const title = localStorage.getItem("title");
+  const title = useSelector(
+    (state) => state.order?.categories[0]?.category,
+  );
+  console.log(title);
+  const telephone = localStorage.getItem("telephone");
 
   const orderCreate = async () => {
+    await dispatch(fetchUpdatedUser({ telephone, title }));
     navigate(Path.myOrder);
   };
 
   return (
-    <Layout>
+    <>
       <div className='orderProfile'>
         <h2 className='orderProfile__title'>
           Заказ почти создан
@@ -80,7 +85,7 @@ function OrderProfile({ userName, userID }) {
           </button>
         </div>
       </div>
-    </Layout>
+    </>
   );
 }
 
