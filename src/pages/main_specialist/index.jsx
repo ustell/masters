@@ -14,8 +14,10 @@ import SpecialistRegion from "../../component/SpecialistRegion/SpecialistRegion"
 import Header from "../../component/Header/Header";
 import { Footer } from "../../component/Footer/Footer";
 import { Layout } from "../../layout/Layout";
+import ScrollToTop from "../../service/scrollTop";
 
 function MainSpecialist() {
+  ScrollToTop();
   return (
     <Layout>
       <SpecialistMainBlock />
