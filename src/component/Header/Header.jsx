@@ -71,6 +71,7 @@ function Header() {
           console.error(
             "Error fetching updated user name:",
             error,
+            
           );
         });
     }
