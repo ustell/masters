@@ -145,7 +145,7 @@ const specialist = [
     id: 2,
   },
   {
-    title: "Спортивные тренеры",
+    title: "Спортивные тренера",
     name: [
       {
         id: 1,
