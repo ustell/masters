@@ -1,3 +1,5 @@
+/** @format */
+
 import React, { useState } from "react";
 
 import phone from "../../assets/img/image mobile.svg";
@@ -8,19 +10,21 @@ import Btn from "../Btn/Btn";
 import { useNavigate } from "react-router";
 import { Path } from "../../path";
 import Header from "../Header/Header";
+import { useDispatch } from "react-redux";
+import { fetchCategories } from "../../redux/features/orderSlice";
 
 function MainBlock() {
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState("");
-
+  const dispatch = useDispatch();
   const handleBlockClick = (content) => {
     setInputValue(content);
+    dispatch(fetchCategories(content));
     setTimeout(() => {
       // Перенаправление пользователя через React Router
       navigate(Path.filterStepOne);
     }, 1000);
   };
-
 
   const [count, setCount] = useState(0);
   const targetCount = 12856;
@@ -42,7 +46,6 @@ function MainBlock() {
 
   const formattedCount = Math.floor(count).toLocaleString();
 
-
   return (
     <>
       <Header />
@@ -53,11 +56,13 @@ function MainBlock() {
           </h1>
           <div className='main__subtitle'>
             <span className='mainsubtitle'>
-              {formattedCount} клиентов доверили дела мастерам
+              {formattedCount} клиентов доверили дела
+              мастерам
             </span>
           </div>
           <div className='mainsearch'>
             <Input
+              inputValue={inputValue}
               value={inputValue}
               onChange={(e) =>
                 setInputValue(e.target.value)
@@ -67,20 +72,18 @@ function MainBlock() {
           </div>
           <div className='mainhint'>
             <Hint
-              content='Программист'
+              content='Мастера по ремонту'
               onClick={() =>
-                handleBlockClick("Программист")
+                handleBlockClick("Мастера по ремонту")
               }
             />
             <Hint
-              content='Копирайтер'
-              onClick={() => handleBlockClick("Копирайтер")}
+              content='Репетиторы'
+              onClick={() => handleBlockClick("Репетиторы")}
             />
             <Hint
-              content='Английский язык'
-              onClick={() =>
-                handleBlockClick("Английский язык")
-              }
+              content='Фрилансеры'
+              onClick={() => handleBlockClick("Фрилансеры")}
             />
           </div>
         </div>

@@ -4,6 +4,10 @@ import React from "react";
 
 
 export const Hint = ({ content, onClick }) => {
+
+  
+
+
   return (
     <div className='orderFilling__hint-content'>
       <p

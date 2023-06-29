@@ -5,11 +5,6 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import {
-  Route,
-  Routes,
-  createRoutesFromElements,
-} from "react-router-dom";
 
 import { Path } from "./path";
 import Register from "./pages/registration/Index";
@@ -23,7 +18,6 @@ import OrderFilling from "./pages/order_Filling";
 import "./scss/app.scss";
 import OrderCreateProfile from "./pages/order_final";
 import FAQ from "./pages/FAQ";
-import { RegistrationPages2 } from "./pages/registration/RegistrationPages2";
 import ActiveOrdersAll from "./pages/active_order_all";
 import MainSpecialist from "./pages/main_specialist";
 import { NotFound } from "./pages/NotFound/NotFound";
@@ -67,10 +61,6 @@ function App() {
     {
       path: Path.FAQ,
       element: <FAQ />,
-    },
-    {
-      path: Path.finalRegister,
-      element: <RegistrationPages2 />,
     },
     {
       path: Path.myOrder,

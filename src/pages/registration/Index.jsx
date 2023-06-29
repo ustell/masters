@@ -3,13 +3,13 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import PhoneInput from "react-phone-number-input";
+import { useNavigate } from "react-router-dom";
 
 import Google from "../../assets/img/google.svg";
 import "./style.scss";
 import "react-phone-number-input/style.css";
-import { useNavigate } from "react-router-dom";
-import Header from "../../component/Header/Header";
-import { Footer } from "../../component/Footer/Footer";
+import { Layout } from "../../layout/Layout";
+import { registerUser } from "../../redux/features/authSlice";
 import { Path } from "../../path";
 
 function Registration() {
@@ -17,6 +17,13 @@ function Registration() {
     React.useState(60);
   const [isCounterActive, setIsCounterActive] =
     React.useState(true);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [telephone, setTelephone] = useState("");
+
+  const [open, setOpen] = useState(true);
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -34,61 +41,43 @@ function Registration() {
     return () => clearInterval(interval);
   }, []);
 
-  const minutes = Math.floor(remainingTime / 60);
-  const seconds = remainingTime % 60;
-  const formattedTime = `${minutes
-    .toString()
-    .padStart(2, "0")}:${seconds
-    .toString()
-    .padStart(2, "0")}`;
-  const [telephone, setTelephone] = useState("");
-  const dispatch = useDispatch();
-  const [verificate, setVerificate] = useState("");
-  const [open, setOpen] = useState(true);
-
   const toggleMenu = () => {
     setOpen(!open);
   };
 
-  const registration = async (e) => {
-    e.preventDefault();
-    const data = 1;
+  const dispatch = useDispatch();
 
-    if (!data.payload) {
-      alert("Не удалось зарегистрироваться");
-    } else {
-      alert("Сообщение отправлено");
-      toggleMenu();
-    }
+  const registrationTelephone = async (e) => {
+    e.preventDefault();
+    toggleMenu();
+    // логика для обработки регистрации пользователя
   };
-  const navigate = useNavigate();
-  const verify = async (e) => {
+  const userData = {
+    telephone,
+    name,
+    email,
+  };
+  const register = async (e) => {
     e.preventDefault();
+    await dispatch(registerUser(userData));
+    localStorage.setItem(
+      "telephone",
+      telephone.startsWith("+")
+        ? telephone.slice(1) //
+        : telephone,
+    );
+    navigate(Path.home);
+    try {
+    } catch (error) {
 
-    const data = await dispatch();
-
-    if (!data.payload) {
-      alert("Не удалось подтвердить регистрацию");
-    } else {
-      alert("Регистрация подтверждена");
-      toggleMenu();
-      window.localStorage.setItem(
-        "token",
-        data.payload.token,
-      );
-      if (data.payload.status) {
-        navigate(Path.finalRegister);
-      } else {
-        navigate(Path.home);
-      }
-
-      return data;
+      alert("не зарегестрировались");
     }
+
+    //Логика для обработки создания аккаунта
   };
 
   return (
-    <>
-      <Header />
+    <Layout>
       <section className='registration'>
         <div className='registration__content'>
           {open ? (
@@ -97,7 +86,7 @@ function Registration() {
                 Вход и регистрация
               </h3>
               <form
-                onSubmit={registration}
+                onSubmit={registrationTelephone}
                 className='registration__form'
               >
                 <div className='registration__group'>
@@ -143,58 +132,37 @@ function Registration() {
             </>
           ) : (
             <>
+              {" "}
               <h3 className='registration__title'>
-                Вход и регистрация
+                Введите имя и почту
               </h3>
-              <div className='registration__block'>
-                <p className='len'>
-                  Код отправлен на номер:
-                  <span className='len'>{telephone}</span>
-                </p>
-                <p
-                  className='registration__block--izmenit len'
-                  onClick={toggleMenu}
-                >
-                  Изменить номер
-                </p>
-              </div>
-              <form onSubmit={""}>
+              <form onSubmit={register}>
                 <input
-                  type='number'
-                  value={verificate}
-                  onChange={(e) =>
-                    setVerificate(e.target.value)
-                  }
+                  type='text'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className='registration__input__sms registration__input__sms--name'
+                  placeholder='Ваше имя'
+                />
+                <input
+                  type='text'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className='registration__input__sms'
-                  placeholder='Код из СМС'
+                  placeholder='Вашу почту'
                 />
                 <button
                   className='registration__login registration__btn'
                   type='submit'
-                  onClick={verify}
                 >
-                  Продолжить
+                  Создать аккаунт
                 </button>
-                <p className='registration__cap'>
-                  при входе вы подтверждаете
-                  <a
-                    className='registration__cap--link'
-                    href='#'
-                  >
-                    <p>условия сервиса</p>
-                  </a>
-                </p>
-                <p className='registration__cap'>
-                  Отправить повторное СМС через{" "}
-                  <data>{formattedTime}</data>
-                </p>
               </form>
             </>
           )}
         </div>
       </section>
-      <Footer />
-    </>
+    </Layout>
   );
 }
 

@@ -19,15 +19,13 @@ function ActiveOrdersAll() {
   const [inputValue, setInputValue] = React.useState("");
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const token = localStorage.getItem("token");
+  const token = localStorage.getItem("telephone");
+  const res = useSelector((state) => state.user?.data);
+  const order = Array.isArray(res?.orders)
+    ? res.orders
+    : [];
+  console.log(order);
 
-  useEffect(() => {}, []);
-
-  const userName = useSelector(
-    (state) => state.auth.userName,
-  );
-  const post = userName?.data?.data?.posts;
-  console.log(post);
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -43,8 +41,7 @@ function ActiveOrdersAll() {
   return (
     <Layout>
       <section className='createOrder'>
-        {userName?.data?.data &&
-        userName.data.data.posts?.length === 0 ? (
+        {order && order.length === 0 ? (
           <>
             <section className='activeOrders'>
               <h3 className='activeOrders__title'>
@@ -142,11 +139,11 @@ function ActiveOrdersAll() {
                 )}
               </div>
             </div>
-            {post &&
-              post.map((item) => (
+            {order &&
+              order.map((item, index) => (
                 <article
                   className='createOrder__item'
-                  key={item._id}
+                  key={index + Date.now()}
                 >
                   <div className='createOrder__item-content'>
                     <p className='createOrder__item-name'>

@@ -6,11 +6,13 @@ import { Link } from "react-router-dom";
 import { Path } from "../../path";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import PhoneInput from "react-phone-number-input";
 
+import PhoneInput from "react-phone-number-input";
+import Google from "../../assets/img/google.svg";
 import "./style.scss";
 import "react-phone-number-input/style.css";
 import { useNavigate } from "react-router-dom";
+import { registerUser } from "../../redux/features/authSlice";
 
 export const NotClient = () => {
   const [remainingTime, setRemainingTime] =
@@ -41,6 +43,8 @@ export const NotClient = () => {
     .padStart(2, "0")}:${seconds
     .toString()
     .padStart(2, "0")}`;
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [telephone, setTelephone] = useState("");
   const dispatch = useDispatch();
   const [verificate, setVerificate] = useState("");
@@ -50,39 +54,36 @@ export const NotClient = () => {
     setOpen(!open);
   };
 
-  const registration = async (e) => {
+  const registrationTelephone = async (e) => {
     e.preventDefault();
-
-    if (!data.payload) {
-      alert("Не удалось зарегистрироваться");
-    } else {
-      alert("Сообщение отправлено");
-      toggleMenu();
-    }
+    toggleMenu();
+    // логика для обработки регистрации пользователя
   };
   const navigate = useNavigate();
   const data = {};
-  const verify = async (e) => {
+
+  const userData = {
+    telephone,
+    name,
+    email,
+  };
+  const register = async (e) => {
     e.preventDefault();
+    await dispatch(registerUser(userData));
+    localStorage.setItem(
+      "telephone",
+      telephone.startsWith("+")
+        ? telephone.slice(1) //
+        : telephone,
+    );
+    window.location.reload();
+    try {
+    } catch (error) {
 
-    if (!data.payload) {
-      alert("Не удалось подтвердить регистрацию");
-    } else {
-      alert("Регистрация подтверждена");
-
-      window.localStorage.setItem(
-        "token",
-        data.payload.token,
-      );
-      if (data.payload.status) {
-        navigate(Path.finalRegister);
-      } else {
-        navigate(Path.finalStep);
-        window.location.reload();
-      }
-
-      return data;
+      alert("не зарегестрировались");
     }
+
+    //Логика для обработки создания аккаунта
   };
   return (
     <div className='orderCreateProfile'>
@@ -98,7 +99,7 @@ export const NotClient = () => {
                 Вход и регистрация
               </h3>
               <form
-                onSubmit={registration}
+                onSubmit={registrationTelephone}
                 className='registration__form'
               >
                 <div className='registration__group'>
@@ -117,55 +118,63 @@ export const NotClient = () => {
                     решаете, кому он будет доступен.
                   </p>
                 </div>
+                <div className='registration__group registration__button'>
+                  <button
+                    className='registration__login registration__btn'
+                    type='submit'
+                  >
+                    Продолжить
+                  </button>
+                  <button className='registration__google registration__btn'>
+                    <a
+                      className='registration__link registration__link-google'
+                      href='/'
+                    >
+                      <span className='registration__btn-logotip'>
+                        <img
+                          src={Google}
+                          className='registration__btn-img'
+                          alt=''
+                        />
+                      </span>
+                      Вход через Google
+                    </a>
+                  </button>
+                </div>
               </form>
             </>
           ) : (
             <>
+              {" "}
               <h3 className='registration__title'>
-                Вход и регистрация
+                Введите имя и почту
               </h3>
-              <div className='registration__block'>
-                <p className='len'>
-                  Код отправлен на номер:
-                  <span className='len'>{telephone}</span>
-                </p>
-                <p
-                  className='registration__block--izmenit len'
-                  onClick={toggleMenu}
-                >
-                  Изменить номер
-                </p>
-              </div>
-              <form onSubmit={""}>
+              <form onSubmit={register}>
                 <input
-                  type='number'
-                  value={verificate}
-                  onChange={(e) =>
-                    setVerificate(e.target.value)
-                  }
-                  className='registration__input__sms'
-                  placeholder='Код из СМС'
+                  type='text'
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className='registration__input__sms registration__input__sms--name'
+                  placeholder='Ваше имя'
                 />
+                <input
+                  type='text'
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className='registration__input__sms'
+                  placeholder='Вашу почту'
+                />
+                <button
+                  className='registration__login registration__btn'
+                  type='submit'
+                >
+                  Создать аккаунт
+                </button>
               </form>
             </>
           )}
         </div>
       </>
-
-      <div className='filter__Goback'>
-        <Link
-          className='filter__Goback--link'
-          to={Path.aside}
-        >
-          <img src={arrowBlack} alt='arrow' />
-        </Link>
-        <button
-          onClick={open ? registration : verify}
-          className='filter__btn'
-        >
-          Продолжить <img src={arrowWhite} alt='arrow' />
-        </button>
-      </div>
     </div>
   );
 };

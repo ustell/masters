@@ -30,11 +30,18 @@ export const ProfilePage = () => {
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
-  useEffect(() => {}, [dispatch, token]);
+  const data = useSelector((store) => store.user.data);
+
+
   const [telephone, setTelephone] = useState("");
-  const name = "name";
-  const telephoneNumber = "8";
-  const email = "email";
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  useEffect(() => {
+    setTelephone(data?.telephone);
+    setName(data?.name);
+    setEmail(data?.email);
+  }, [data]);
+
   const profile =
     typeof name === "string"
       ? name.charAt(0).toUpperCase()
@@ -147,7 +154,7 @@ export const ProfilePage = () => {
                       international
                       withCountryCallingCode
                       className='registration__inp'
-                      value={telephoneNumber}
+                      value={telephone}
                       onChange={setTelephone}
                     />
                     <label htmlFor='Phone' type='text'>

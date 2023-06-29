@@ -9,7 +9,13 @@ export const Layout = ({ children }) => {
   const currentPath = window.location.pathname;
 
   let footerComponent = null;
-  if (currentPath === "/" || currentPath === "/home") {
+
+  if (
+    currentPath === "/" ||
+    currentPath === "/home" ||
+    currentPath === "/specialist" ||
+    currentPath === "/notfound"
+  ) {
     footerComponent = <Footer />;
   }
 
